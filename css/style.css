@@ -250,8 +250,11 @@ section {
 }
 
 .perfil-foto img {
-  width: min(100%, 480px);
+    width: clamp(420px, 45vw, 700px);
+  max-width: none;
   height: auto;
+  transform: scale(1.15);
+  transform-origin: bottom center;
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(0 30px 40px rgba(0,0,0,.15));
