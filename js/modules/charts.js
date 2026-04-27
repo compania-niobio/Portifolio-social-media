@@ -1,113 +1,165 @@
-function formatar(num) {
-  return num.toLocaleString("pt-BR");
+const results = {
+  semGestao: 3876,
+  comGestao: 13086,
+};
+
+function formatNumber(number) {
+  return Number(number).toLocaleString("pt-BR");
 }
 
-function animarNumero(id, valor) {
-  const el = document.getElementById(id);
-  if (!el) return;
+function animateNumber(id, target) {
+  const element = document.getElementById(id);
+  if (!element) return;
 
-  let atual = 0;
-  const incremento = valor / 80;
+  const duration = 1400;
+  const startTime = performance.now();
 
-  const timer = setInterval(() => {
-    atual += incremento;
+  const tick = (currentTime) => {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
 
-    if (atual >= valor) {
-      el.innerText = formatar(valor);
-      clearInterval(timer);
+    element.textContent = formatNumber(value);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(tick);
     } else {
-      el.innerText = formatar(Math.floor(atual));
+      element.textContent = formatNumber(target);
     }
-  }, 20);
+  };
+
+  window.requestAnimationFrame(tick);
 }
 
-function criarGraficoRosca(id, valor) {
+function createDoughnutChart(id, value, maxValue) {
   const canvas = document.getElementById(id);
   if (!canvas || typeof Chart === "undefined") return;
+
+  const remaining = Math.max(maxValue - value, 0);
 
   new Chart(canvas, {
     type: "doughnut",
     data: {
       datasets: [
         {
-          data: [valor],
-          backgroundColor: ["#d6b56d"],
+          data: [value, remaining],
+          backgroundColor: ["#d6b56d", "rgba(214, 181, 109, 0.14)"],
           borderWidth: 0,
+          hoverOffset: 0,
         },
       ],
     },
     options: {
       responsive: true,
-      cutout: "80%",
+      maintainAspectRatio: false,
+      cutout: "78%",
       rotation: -90,
       circumference: 180,
       plugins: {
         legend: { display: false },
+        tooltip: { enabled: false },
+      },
+      animation: {
+        duration: 1300,
+        easing: "easeOutQuart",
       },
     },
   });
 }
 
-function criarGraficoLinha() {
+function createLineChart() {
   const canvas = document.getElementById("graficoLinha");
   if (!canvas || typeof Chart === "undefined") return;
 
   new Chart(canvas, {
     type: "line",
     data: {
-      labels: ["Dez", "Jan", "Fev"],
+      labels: ["Sem gestão", "Início", "Com gestão"],
       datasets: [
         {
-          data: [3876, 8000, 13086],
+          data: [results.semGestao, 7600, results.comGestao],
           borderColor: "#d6b56d",
-          backgroundColor: "rgba(214,181,109,.1)",
-          tension: 0.4,
+          backgroundColor: "rgba(214, 181, 109, 0.12)",
+          pointBackgroundColor: "#d6b56d",
+          pointBorderWidth: 0,
+          pointRadius: 4,
+          tension: 0.42,
           fill: true,
         },
       ],
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
       },
       scales: {
-        x: { display: false },
-        y: { display: false },
+        x: {
+          grid: { display: false },
+          ticks: { color: "#8a8178" },
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: "rgba(0, 0, 0, 0.06)" },
+          ticks: {
+            color: "#8a8178",
+            callback: (value) => formatNumber(value),
+          },
+        },
       },
     },
   });
+}
+
+function fillStaticResults() {
+  const growth = Math.round(((results.comGestao - results.semGestao) / results.semGestao) * 100);
+  const crescimento = document.getElementById("crescimento");
+
+  if (crescimento) {
+    crescimento.textContent = `+${growth}% de crescimento`;
+  }
+
+  const semGestaoLabel = document.querySelector("[data-result='sem-gestao']");
+  const comGestaoLabel = document.querySelector("[data-result='com-gestao']");
+
+  if (semGestaoLabel) semGestaoLabel.textContent = formatNumber(results.semGestao);
+  if (comGestaoLabel) comGestaoLabel.textContent = formatNumber(results.comGestao);
 }
 
 export function initCharts() {
   const section = document.querySelector(".resultados");
   if (!section) return;
 
-  let iniciado = false;
+  let started = false;
 
-  function iniciar() {
-    if (iniciado) return;
+  const startCharts = () => {
+    if (started) return;
+    started = true;
 
-    const pos = section.getBoundingClientRect().top;
+    const maxValue = results.comGestao;
 
-    if (pos < window.innerHeight - 100) {
-      criarGraficoRosca("graficoSemGestao", 3876);
-      criarGraficoRosca("graficoComGestao", 13086);
-      criarGraficoLinha();
+    createDoughnutChart("graficoSemGestao", results.semGestao, maxValue);
+    createDoughnutChart("graficoComGestao", results.comGestao, maxValue);
+    createLineChart();
 
-      animarNumero("valor1", 3876);
-      animarNumero("valor2", 13086);
+    animateNumber("valor1", results.semGestao);
+    animateNumber("valor2", results.comGestao);
+    fillStaticResults();
+  };
 
-      const crescimento = document.getElementById("crescimento");
-      if (crescimento) {
-        crescimento.innerText = "+238% de crescimento";
-      }
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCharts();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
 
-      iniciado = true;
-      window.removeEventListener("scroll", iniciar);
-    }
+    observer.observe(section);
+  } else {
+    startCharts();
   }
-
-  iniciar();
-  window.addEventListener("scroll", iniciar, { passive: true });
 }

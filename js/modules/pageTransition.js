@@ -1,31 +1,24 @@
 export function initPageTransition() {
   const transition = document.querySelector(".page-transition");
-  const links = document.querySelectorAll("a[href]");
-
   if (!transition) return;
 
-  links.forEach((link) => {
+  document.querySelectorAll("a[href]").forEach((link) => {
     const url = link.getAttribute("href");
+    const target = link.getAttribute("target");
 
-    if (
-      !url ||
-      url.startsWith("#") ||
-      url.startsWith("http") ||
-      url.startsWith("mailto:") ||
-      url.startsWith("tel:") ||
-      url.startsWith("https://wa.me")
-    ) {
-      return;
-    }
+    const isExternal = url?.startsWith("http") || url?.startsWith("mailto:") || url?.startsWith("tel:") || url?.startsWith("https://wa.me");
+    const isAnchor = url?.startsWith("#");
+    const shouldIgnore = !url || isExternal || isAnchor || target === "_blank";
+
+    if (shouldIgnore) return;
 
     link.addEventListener("click", (event) => {
       event.preventDefault();
-
       transition.classList.add("active");
 
-      setTimeout(() => {
+      window.setTimeout(() => {
         window.location.href = url;
-      }, 500);
+      }, 450);
     });
   });
 }

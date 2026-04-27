@@ -5,51 +5,64 @@ export function initParallax() {
   const parallaxItems = document.querySelectorAll(".parallax");
   const heroContent = document.querySelector(".hero-content");
 
-  function onScroll() {
-    const device = getDeviceType();
+  if (!phones.length && !parallaxItems.length && !heroContent) return;
 
-    if (device !== "desktop") {
-      if (heroContent) {
-        heroContent.style.transform = "none";
-        heroContent.style.opacity = "1";
-        heroContent.style.filter = "none";
-      }
+  let ticking = false;
 
-      phones.forEach((phone) => {
-        phone.style.transform = "none";
-      });
+  const resetMobileEffects = () => {
+    if (heroContent) {
+      heroContent.style.transform = "none";
+      heroContent.style.opacity = "1";
+      heroContent.style.filter = "none";
+    }
 
+    phones.forEach((phone) => {
+      phone.style.transform = "";
+    });
+
+    parallaxItems.forEach((item) => {
+      item.style.transform = "none";
+    });
+  };
+
+  const update = () => {
+    ticking = false;
+
+    if (getDeviceType() !== "desktop") {
+      resetMobileEffects();
       return;
     }
 
     const scroll = window.scrollY;
 
     if (heroContent) {
-      heroContent.style.transform = `
-        translateY(${scroll * 0.2}px)
-        scale(${1 + scroll * 0.0005})
-      `;
-      heroContent.style.opacity = 1 - scroll * 0.0015;
-      heroContent.style.filter = `blur(${scroll * 0.01}px)`;
+      const opacity = Math.max(0, 1 - scroll * 0.0015);
+      heroContent.style.transform = `translateY(${scroll * 0.16}px) scale(${1 + scroll * 0.00035})`;
+      heroContent.style.opacity = opacity.toString();
+      heroContent.style.filter = `blur(${Math.min(scroll * 0.008, 10)}px)`;
     }
 
     phones.forEach((phone) => {
       const isLeft = phone.classList.contains("left");
       const rotate = isLeft ? -28 : 24;
-      const speed = isLeft ? 0.08 : -0.08;
-
-      phone.style.transform = `
-        rotate(${rotate}deg)
-        translateY(${scroll * speed}px)
-      `;
+      const speed = isLeft ? 0.06 : -0.06;
+      phone.style.transform = `rotate(${rotate}deg) translateY(${scroll * speed}px)`;
     });
 
     parallaxItems.forEach((item) => {
-      const speed = Number(item.dataset.speed) || 0.2;
+      const speed = Number(item.dataset.speed) || 0.15;
       item.style.transform = `translateY(${scroll * speed}px)`;
     });
-  }
+  };
 
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  const requestUpdate = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate, { passive: true });
 }

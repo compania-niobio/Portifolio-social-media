@@ -1,51 +1,71 @@
-function aplicarTemaPorHorario() {
-  const hora = new Date().getHours();
-
-  // Dia: 06h até 17h59
-  const isDia = hora >= 6 && hora < 18;
-
-  const root = document.documentElement;
-  const logo = document.querySelector("#logo");
-  const pessoa = document.querySelector("#pessoa");
-
-  if (isDia) {
-    root.classList.add("tema-dia");
-    root.classList.remove("tema-noite");
-
-    logo.src = "assets/imagens/logo_1200x1200.png";
-    logo.srcset = `
+const paths = {
+  dayLogo: {
+    src: "assets/imagens/logo_1200x1200.png",
+    srcset: `
       assets/imagens/logo_300x300.png 300w,
       assets/imagens/logo_600x600.png 600w,
-      assets/logo_1200x1200.png 1200w
-    `;
-
-    pessoa.src = "assets/imagens/person_black_1200x1200.png";
-    pessoa.srcset = `
+      assets/imagens/logo_1200x1200.png 1200w
+    `,
+  },
+  nightLogo: {
+    src: "assets/imagens/logo_white_1200x1200.png",
+    srcset: `
+      assets/imagens/logo_white_300x300.png 300w,
+      assets/imagens/logo_white_600x600.png 600w,
+      assets/imagens/logo_white_1200x1200.png 1200w
+    `,
+  },
+  dayPerson: {
+    src: "assets/imagens/person_black_1200x1200.png",
+    srcset: `
       assets/imagens/person_black_300x300.png 300w,
       assets/imagens/person_black_600x600.png 600w,
       assets/imagens/person_black_1200x1200.png 1200w
-    `;
-  } else {
-    root.classList.add("tema-noite");
-    root.classList.remove("tema-dia");
-
-    logo.src = "assets/imagens/logo_white_1200x1200.png";
-    logo.srcset = `
-      assets/imagens/logo_white_300x300.png 300w,
-      assets/imagens/logo_white_600x600.png 600w,
-      assets/images/logo_white_1200x1200.png 1200w
-    `;
-
-    pessoa.src = "assets/imagens/person_cut_1200x1200.png";
-    pessoa.srcset = `
+    `,
+  },
+  nightPerson: {
+    src: "assets/imagens/person_cut_1200x1200.png",
+    srcset: `
       assets/imagens/person_cut_300x300.png 300w,
       assets/imagens/person_cut_600x600.png 600w,
       assets/imagens/person_cut_1200x1200.png 1200w
-    `;
-  }
+    `,
+  },
+};
+
+function setImage(image, imageData) {
+  if (!image || !imageData) return;
+
+  image.style.opacity = "0";
+
+  window.setTimeout(() => {
+    image.src = imageData.src;
+    image.srcset = imageData.srcset.trim();
+    image.style.opacity = "1";
+  }, 120);
 }
 
-aplicarTemaPorHorario();
+export function initTheme() {
+  const applyTheme = () => {
+    const hour = new Date().getHours();
+    const isDay = hour >= 6 && hour < 18;
+    const root = document.documentElement;
+    const body = document.body;
 
-// Atualiza a cada 1 minuto
-setInterval(aplicarTemaPorHorario, 60000);
+    root.classList.toggle("tema-dia", isDay);
+    root.classList.toggle("tema-noite", !isDay);
+    body.classList.toggle("tema-dia", isDay);
+    body.classList.toggle("tema-noite", !isDay);
+
+    document.querySelectorAll("#logo, .js-logo-theme").forEach((logo) => {
+      setImage(logo, isDay ? paths.dayLogo : paths.nightLogo);
+    });
+
+    document.querySelectorAll("#pessoa, .js-person-theme").forEach((person) => {
+      setImage(person, isDay ? paths.dayPerson : paths.nightPerson);
+    });
+  };
+
+  applyTheme();
+  window.setInterval(applyTheme, 60_000);
+}

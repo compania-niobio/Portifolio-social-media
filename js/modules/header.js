@@ -2,13 +2,11 @@ export function initHeader() {
   const header = document.querySelector("header");
   if (!header) return;
 
-  function updateHeader() {
-    if (window.scrollY > 80) {
-      header.classList.add("header-scrolled");
-    } else {
-      header.classList.remove("header-scrolled");
-    }
-  }
+  const updateHeader = () => {
+    const scrolled = window.scrollY > 40;
+    header.classList.toggle("nav-dark", scrolled);
+    header.classList.toggle("is-scrolled", scrolled);
+  };
 
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });

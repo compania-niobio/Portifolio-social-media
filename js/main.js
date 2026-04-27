@@ -6,12 +6,20 @@ import { initParallax } from "./modules/parallax.js";
 import { initCharts } from "./modules/charts.js";
 import { initLazyLoad } from "./modules/lazyLoad.js";
 
+const safeInit = (name, callback) => {
+  try {
+    callback();
+  } catch (error) {
+    console.warn(`[${name}] não iniciou:`, error);
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
-  initDevice();
-  initTheme();
-  initPageTransition();
-  initHeader();
-  initParallax();
-  initCharts();
-  initLazyLoad();
+  safeInit("Device", initDevice);
+  safeInit("Theme", initTheme);
+  safeInit("PageTransition", initPageTransition);
+  safeInit("Header", initHeader);
+  safeInit("Parallax", initParallax);
+  safeInit("Charts", initCharts);
+  safeInit("LazyLoad", initLazyLoad);
 });
