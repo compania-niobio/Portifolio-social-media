@@ -1,55 +1,239 @@
-/* css/responsive.css - apenas ajustes responsivos, sem duplicar estilos base */
+/* css/responsive.css - responsivo final sem quebra horizontal */
 
 @media (max-width: 1180px) {
-  :root { --container: min(100% - 36px, 900px); }
-  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .numbers-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  :root {
+    --container: min(960px, calc(100% - 36px));
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 1000px) {
-  .perfil { grid-template-columns: 1fr; text-align: center; gap: 38px; }
-  .perfil-img, .apple-img, #pessoa { width: min(92vw, 520px); margin-inline: auto; max-height: none; order: 1; }
-  .perfil-texto { margin-inline: auto; order: 2; }
-  .contato-luxo { grid-template-columns: 1fr; text-align: center; }
-  .links-luxo { align-items: center; }
-  .footer-content { grid-template-columns: 1fr; text-align: center; }
-  .footer-brand img, footer img { margin-inline: auto; }
+@media (max-width: 1024px) {
+  .perfil,
+  .contato-luxo {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: clamp(110px, 14vw, 140px);
+  }
+
+  .perfil-texto,
+  .citacao {
+    margin-inline: auto;
+  }
+
+  .perfil-texto p {
+    text-align: center;
+  }
+
+  .pessoa-img,
+  #pessoa {
+    width: min(82vw, 560px);
+    max-height: none;
+  }
+
+  .links-luxo {
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand img,
+  footer img,
+  .logo-contato {
+    margin-inline: auto;
+  }
+
+  .footer-links,
+  .footer-contact {
+    align-items: center;
+  }
 }
 
 @media (max-width: 900px) {
-  :root { --container: min(100% - 32px, 760px); }
-  section { padding: 90px 0; }
-  .site-header { top: 14px; left: 0; transform: none; width: 100%; padding-inline: 12px; }
-  .hero { padding: 120px 18px 70px; }
-  .phone { width: 190px; opacity: .45; }
-  .phone.left { left: -110px; bottom: 90px; }
-  .phone.right { right: -110px; top: 92px; }
-  .numbers-grid { grid-template-columns: 1fr; }
-  .number-card.destaque { transform: none; }
-  .linha-evolucao { height: 300px; }
+  :root {
+    --container: min(760px, calc(100% - 32px));
+  }
+
+  section {
+    padding-block: 86px;
+  }
+
+  .hero {
+    padding-top: 118px;
+  }
+
+  .phone {
+    width: clamp(130px, 36vw, 210px);
+    opacity: .42;
+  }
+
+  .phone.left {
+    left: max(-92px, -18vw);
+    bottom: 90px;
+  }
+
+  .phone.right {
+    right: max(-92px, -18vw);
+    top: 92px;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .number-card {
+    min-height: 220px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .number-card.destaque {
+    transform: none;
+  }
 }
 
 @media (max-width: 650px) {
-  :root { --container: min(100% - 28px, 520px); }
-  .projects-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: clamp(3rem, 17vw, 5rem); }
-  .hero p { margin-bottom: 32px; }
-  .btn { width: min(100%, 290px); padding-inline: 20px; }
-  .perfil { width: var(--container); padding-top: 105px; }
-  .perfil-img, .apple-img, #pessoa { width: min(100%, 420px); }
-  .project-card { min-height: auto; }
-  .project-card img { width: 100%; height: auto; min-height: 0; object-fit: contain; background: var(--cor-card); }
-  .project-info { position: relative; background: var(--cor-card); color: var(--cor-texto); padding: 22px; }
-  .project-info h3 { color: var(--cor-texto); }
-  .project-info p { color: var(--cor-muted); }
-  .project-card.logotipo img { padding: 28px; }
-  .number-card { min-height: 220px; padding: 28px; }
-  .linha-evolucao { height: 260px; padding: 18px; }
-  .links-luxo a { font-size: 20px; }
+  :root {
+    --container: min(520px, calc(100% - 28px));
+    --header-size: 68px;
+  }
+
+  section {
+    padding-block: 74px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 112px 16px 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 17vw, 5.2rem);
+    letter-spacing: clamp(1px, .7vw, 4px);
+  }
+
+  .hero p {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    width: min(100%, 290px);
+    padding-inline: 20px;
+  }
+
+  .phone {
+    max-width: 44vw;
+    opacity: .30;
+  }
+
+  .phone.left {
+    left: -88px;
+    bottom: 96px;
+  }
+
+  .phone.right {
+    right: -88px;
+    top: 104px;
+  }
+
+  .perfil,
+  .contato-luxo {
+    width: var(--container);
+    padding-top: 100px;
+    gap: 30px;
+  }
+
+  .pessoa-img,
+  #pessoa {
+    width: min(100%, 420px);
+  }
+
+  .perfil-texto h1,
+  .projetos h1,
+  .results-header h2 {
+    font-size: clamp(2.75rem, 13vw, 4.7rem);
+  }
+
+  .citacao h1 {
+    font-size: clamp(2.45rem, 12vw, 4.8rem);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    border-radius: 26px;
+  }
+
+  .project-card img {
+    aspect-ratio: auto;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    background: var(--cor-card);
+  }
+
+  .project-info {
+    position: relative;
+    background: var(--cor-card);
+    color: var(--cor-texto);
+    padding: 22px;
+  }
+
+  .project-info h3 {
+    color: var(--cor-texto);
+  }
+
+  .project-info p {
+    color: var(--cor-muted);
+  }
+
+  .project-card.logotipo img {
+    padding: 28px;
+  }
+
+  .linha-evolucao {
+    height: 260px;
+  }
+
+  .links-luxo a {
+    font-size: clamp(1.25rem, 6vw, 1.8rem);
+  }
 }
 
 @media (max-width: 430px) {
-  .phone.left { left: -130px; }
-  .phone.right { right: -130px; }
-  .project-info { padding: 20px; }
+  :root {
+    --container: calc(100% - 24px);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 18vw, 4.3rem);
+  }
+
+  .phone.left {
+    left: -104px;
+  }
+
+  .phone.right {
+    right: -104px;
+  }
+
+  .project-info,
+  .number-card {
+    padding: 20px;
+  }
+
+  .footer-bottom {
+    font-size: .82rem;
+  }
 }
