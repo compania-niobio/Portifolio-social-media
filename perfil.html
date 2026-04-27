@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/responsive.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conheça Isadora Rezende, social media, videomaker e storymaker." />
+  <title>Perfil | Isadora Rezende</title>
+  <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-<div class="page-transition"></div>
-<header>
-<img 
-    id="logo"
-    class="img-responsiva logo-img"
-    src="assets/imagens/logo_1200x1200.png"
-    srcset="
-    assets/imagens/logo_300x300.png 300w,
-    assets/imagens/logo_600x600.png 600w,
-    assets/imagens/logo_1200x1200.png 1200w
-    "
-    sizes="(max-width: 600px) 180px,   (max-width: 1024px) 260px, 340px"
-    alt="Logo Isadora Rezende"
-    />
-    <nav>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ir para o início">
+      <img
+        class="img-responsiva logo-img"
+        src="assets/imagens/logo_300x300.png"
+        srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 120px, 160px"
+        alt="Logo Isadora Rezende"
+        width="300"
+        height="300"
+      />
+    </a>
+
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="perfil">
+      <img
+        id="pessoa"
+        class="img-responsiva pessoa-img"
+        src="assets/imagens/person_black_1200x1200.png"
+        srcset="assets/imagens/person_black_300x300.png 300w, assets/imagens/person_black_600x600.png 600w, assets/imagens/person_black_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 90vw, (max-width: 1024px) 70vw, 620px"
+        alt="Isadora Rezende"
+        width="1200"
+        height="1200"
+      />
+
+      <div class="perfil-texto">
+        <h1>Isadora Rezende</h1>
+        <p>
+          Me chamo Isadora, tenho 2 anos de experiência na área de social media,
+          gestão de redes sociais, videomaker e storymaker. Busco sempre registrar
+          momentos únicos com agilidade, qualidade e estratégia.
+        </p>
+
+        <h2>O que eu faço?</h2>
+        <p>
+          Produzo conteúdos para redes sociais, incluindo reels, posts, stories,
+          trends, vídeos para eventos e registros em tempo real, sempre em alta qualidade.
+        </p>
+
+        <h2>Meu diferencial</h2>
+        <p>
+          Mais do que postar, eu crio o roteiro do dia de acordo com as expectativas
+          do cliente, escolhendo músicas, cores e elementos exclusivos para cada projeto.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
+        <p>Social Media • Videomaker • Storymaker</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
         <a href="index.html">Início</a>
+        <a href="perfil.html">Perfil</a>
         <a href="projetos.html">Projetos</a>
         <a href="contato.html">Contato</a>
-    </nav>
-</header>
-
-<section class="perfil">
-
-
-<img 
-  id="pessoa"
-  class="img-responsiva pessoa-img"
-  src="assets/imagens/person_black_1200x1200.png"
-  srcset="
-    assets/imagens/person_black_300x300.png 300w,
-    assets/imagens/person_black_600x600.png 600w,
-    assets/imagens/person_black_1200x1200.png 1200w
-  "
-  sizes="(max-width: 600px) 80vw, (max-width: 1024px) 55vw, 520px"
-  alt="Isadora Rezende"
-/>
-
-<div class="perfil-texto">
-<h1>Isadora Rezende</h1>
-
-<p>
-Me chamo Isadora, 2 anos na área Social Media – gestão de redes sociais – videomaker e storymaker.
-Busco sempre o registro de momentos únicos. Prezo pela agilidade e qualidade da entrega do conteúdo.
-A satisfação do cliente sempre será a minha!
-</p>
-
-<h2>O que eu faço?</h2>
-<p>
-Registros de conteúdo para redes sociais – reels, post e story.  
-Videomaker – vídeos para reels, trends e eventos.  
-Storymaker – stories e reels em tempo real.  
-Todos os vídeos em alta qualidade.
-</p>
-
-<h2>Meu diferencial</h2>
-<p>
-Mais do que postar, eu crio o roteiro do dia de acordo com as expectativas do cliente.
-Escolho músicas, cores e elementos exclusivos para cada projeto.
-</p>
-
-</div>
-
-</section>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-<script type="module" src="js/main.js"></script>
-<footer>
-    <p>© 2026 Isadora Rezende.<br>Todos os direitos reservados.</p>
-    </footer>
-
-    <div class="loader">
-    <img 
-        id="logo"
-        class="img-responsiva logo-img"
-        src="assets/imagens/logo_1200x1200. png"
-        srcset="
-        assets/imagens/logo_300x300.png 300w,
-        assets/imagens/logo_600x600.png 600w,
-        assets/imagens/logo_1200x1200.png 1200w
-        "
-        sizes="(max-width: 600px) 180px,   (max-width: 1024px) 260px, 340px"
-        alt="Logo Isadora Rezende"
-    />
+      </nav>
+      <div class="footer-contact">
+        <p>Marília - SP</p>
+        <p>@socialmedia_isadora</p>
+        <p>Portfólio profissional</p>
+      </div>
     </div>
+    <p class="footer-bottom">© 2026 Isadora Rezende. Todos os direitos reservados.</p>
+  </footer>
 
+  <div class="loader" aria-hidden="true">
+    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
+  </div>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

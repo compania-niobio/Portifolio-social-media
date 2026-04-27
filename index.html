@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio | Isadora Rezende</title>
-<link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio profissional de Isadora Rezende: social media, videomaker e storymaker." />
+  <title>Portfólio | Isadora Rezende</title>
+  <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-   <div class="page-transition"></div>
+  <div class="page-transition" aria-hidden="true"></div>
 
-<header>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ir para o início">
+      <img
+        class="img-responsiva logo-img"
+        src="assets/imagens/logo_300x300.png"
+        srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 120px, 160px"
+        alt="Logo Isadora Rezende"
+        width="300"
+        height="300"
+      />
+    </a>
 
-   <img 
-  id="logo"
-  class="img-responsiva logo-img"
-  src="assets/imagens/logo_300x300.png"
-  srcset="
-    assets/imagens/logo_300x300.png 300w,
-    assets/imagens/logo_600x600.png 600w,
-    assets/imagens/logo_1200x1200.png 1200w
-  "
-  sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-  alt="Logo Isadora Rezende"
-/>
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" id="inicio">
+      <img
+        class="phone left"
+        src="assets/imagens/instagram_600x600.png"
+        srcset="assets/imagens/instagram_300x300.png 300w, assets/imagens/instagram_600x600.png 600w, assets/imagens/instagram_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 190px, 330px"
+        alt="Celular com Instagram"
+        width="600"
+        height="600"
+      />
 
-</header>
+      <div class="hero-content">
+        <h1>Portfólio</h1>
+        <p>Social Media • Videomaker • Storymaker</p>
+        <a href="perfil.html" class="btn">Conheça</a>
+      </div>
 
-<section class="hero">
+      <img
+        class="phone right"
+        src="assets/imagens/instagram_600x600.png"
+        srcset="assets/imagens/instagram_300x300.png 300w, assets/imagens/instagram_600x600.png 600w, assets/imagens/instagram_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 190px, 330px"
+        alt="Celular com Instagram"
+        width="600"
+        height="600"
+      />
+    </section>
+  </main>
 
-    <img class="img-responsiva logo-img"
-  src="assets/imagens/instagram_600x600.png"
-  srcset="
-    assets/imagens/instagram_300x300.png 300w,
-    assets/imagens/instagram_600x600.png 600w,
-    assets/imagens/instagram_1200x1200.png 1200w
-  "
-  sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-  alt="phone Instagram left 3d"
-    />
-    <img class="img-responsiva logo-img"
-  src="assets/imagens/instagram_600x600.png"
-  srcset="
-    assets/imagens/instagram_300x300.png 300w,
-    assets/imagens/instagram_600x600.png 600w,
-    assets/imagens/instagram_1200x1200.png 1200w
-  "
-  sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-  alt="phone Instagram right 3d"
-    />
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
+        <p>Social Media • Videomaker • Storymaker</p>
+      </div>
 
-    <h1>PORTFÓLIO</h1>
-    <p>Social Media • Videomaker • Storymaker</p>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="index.html">Início</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+      </nav>
 
-    <a href="perfil.html" class="btn">Conheça</a>
+      <div class="footer-contact">
+        <p>Marília - SP</p>
+        <p>@socialmedia_isadora</p>
+        <p>Portfólio profissional</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 Isadora Rezende. Todos os direitos reservados.</p>
+  </footer>
 
-</section>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-<script type="module" src="js/main.js"></script>
-<footer>
-    <p>© 2026 Isadora Rezende.<br>Todos os direitos reservados.</p>
-</footer>
+  <div class="loader" aria-hidden="true">
+    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
+  </div>
 
-<div class="loader">
-  <img 
-  id="logo"
-  class="img-responsiva logo-img"
-  src="assets/imagens/logo_300x300.png"
-  srcset="
-    assets/imagens/logo_300x300.png 300w,
-    assets/imagens/logo_600x600.png 600w,
-    assets/imagens/logo_1200x1200.png 1200w
-  "
-  sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-  alt="Logo Isadora Rezende"
-  />
-</div>
-
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

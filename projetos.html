@@ -1,202 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projetos</title>
-<link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projetos de social media, fotos profissionais, logotipos, posts e campanhas de Isadora Rezende." />
+  <title>Projetos | Isadora Rezende</title>
+  <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-<div class="page-transition"></div>
-<header>
-    <img 
-      id="logo"
-      class="img-responsiva logo-img"
-      src="assets/imagens/logo_300x300.png"
-      srcset="
-      assets/imagens/imagens/logo_300x300.png 300w,
-      assets/imagens/imagens/logo_600x600.png 600w,
-      assets/imagens/imagens/logo_1200x1200.png 1200w
-      "
-      sizes="(max-width: 600px) 180px,    (max-width: 1024px) 260px, 340px"
-      alt="Logo Isadora Rezende"
-    />
-    <nav>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ir para o início">
+      <img
+        class="img-responsiva logo-img"
+        src="assets/imagens/logo_300x300.png"
+        srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+        sizes="(max-width: 600px) 120px, 160px"
+        alt="Logo Isadora Rezende"
+        width="300"
+        height="300"
+      />
+    </a>
+
+    <nav aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="projetos">
+      <div class="projects-header">
+        <h1>Projetos</h1>
+        <p>Trabalhos organizados por categoria para o site não quebrar e as imagens manterem proporção.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card pessoas">
+          <img
+            src="assets/post/foto-perso_600.png"
+            srcset="assets/post/foto-perso_300.png 300w, assets/post/foto-perso_600.png 600w, assets/post/foto-perso_1200.png 1200w"
+            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+            alt="Fotos profissionais para redes sociais"
+            width="600"
+            height="600"
+            loading="lazy"
+          />
+          <div class="project-info">
+            <span>Pessoas</span>
+            <h3>Fotos Profissionais</h3>
+            <p>Ensaios, posicionamento e fotos para redes sociais.</p>
+          </div>
+        </article>
+
+        <article class="project-card comidas">
+          <img
+            src="assets/post/ifood_600.png"
+            srcset="assets/post/ifood_300.png 300w, assets/post/ifood_600.png 600w, assets/post/ifood_1200.png 1200w"
+            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+            alt="Fotografia de comida para delivery"
+            width="600"
+            height="600"
+            loading="lazy"
+          />
+          <div class="project-info">
+            <span>Comidas</span>
+            <h3>Fotografia de Produto</h3>
+            <p>Imagens para delivery, cardápio, comércio e redes sociais.</p>
+          </div>
+        </article>
+
+        <article class="project-card logotipo">
+          <img
+            src="assets/post/logo-tipo_600.png"
+            srcset="assets/post/logo-tipo_300.png 300w, assets/post/logo-tipo_600.png 600w, assets/post/logo-tipo_1200.png 1200w"
+            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+            alt="Criação de logotipo e identidade visual"
+            width="600"
+            height="600"
+            loading="lazy"
+          />
+          <div class="project-info">
+            <span>Logotipo</span>
+            <h3>Logo & Branding</h3>
+            <p>Criação de identidade visual para marcas e negócios.</p>
+          </div>
+        </article>
+
+        <article class="project-card eventos">
+          <img
+            src="assets/post/postagem_600.png"
+            srcset="assets/post/postagem_300.png 300w, assets/post/postagem_600.png 600w, assets/post/postagem_1200.png 1200w"
+            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+            alt="Post comemorativo e campanha para redes sociais"
+            width="600"
+            height="600"
+            loading="lazy"
+          />
+          <div class="project-info">
+            <span>Eventos</span>
+            <h3>Posts & Campanhas</h3>
+            <p>Artes para datas especiais, eventos e campanhas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resultados reveal">
+      <h2>Resultados Reais</h2>
+
+      <div class="graficos-premium">
+        <article class="grafico-card">
+          <span>25 Dez → 24 Jan</span>
+          <small>Sem gestão</small>
+          <div class="grafico-wrapper">
+            <canvas id="graficoSemGestao" aria-label="Gráfico sem gestão"></canvas>
+            <div class="centro">
+              <strong id="valor1">0</strong>
+              <span>views</span>
+            </div>
+          </div>
+          <p class="growth negativo">baixo alcance</p>
+        </article>
+
+        <article class="grafico-card destaque">
+          <span>24 Jan → 22 Fev</span>
+          <small>Com gestão</small>
+          <div class="grafico-wrapper">
+            <canvas id="graficoComGestao" aria-label="Gráfico com gestão"></canvas>
+            <div class="centro">
+              <strong id="valor2">0</strong>
+              <span>views</span>
+            </div>
+          </div>
+          <p class="growth positivo" id="crescimento"></p>
+        </article>
+      </div>
+
+      <div class="linha-evolucao">
+        <canvas id="graficoLinha" aria-label="Evolução dos resultados"></canvas>
+      </div>
+    </section>
+
+    <section class="texto reveal">
+      <p><strong>01 – Identidade visual</strong><br />Analiso e crio identidade visual para fortalecer o posicionamento do cliente.</p>
+      <p><strong>02 – Criação de conteúdo</strong><br />Transformo momentos, produtos e eventos em conteúdos estratégicos para redes sociais.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
+        <p>Social Media • Videomaker • Storymaker</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
         <a href="index.html">Início</a>
+        <a href="perfil.html">Perfil</a>
         <a href="projetos.html">Projetos</a>
         <a href="contato.html">Contato</a>
-    </nav>
-</header>
-<section class="projetos">
-
-<h1>Projetos</h1>
-
-<section class="projects">
-
-  <!-- 👩‍🦰 Pessoas -->
-  <div class="project-card">
-    <img 
-      src="assets/post/foto-perso_1200.png"
-      srcset="
-        assets/post/foto-perso_300.png 300w,
-        assets/post/foto-perso_600.png 600w,
-        iassets/post/foto-perso_1200.png 1200w
-      "
-      sizes="(max-width: 768px) 100vw, 33vw"
-      alt="Ensaio profissional"
-      loading="lazy"
-    />
-    <div class="project-info">
-      <h3>Fotos Profissionais</h3>
-      <p>Ensaios e fotos para redes sociais</p>
-    </div>
-  </div>
-
-  <!-- 🍯 Comidas -->
-  <div class="project-card">
-    <img 
-      src="assets/post/ifood_600.png"
-      srcset="
-        assets/post/ifood_300.png 300w,
-        assets/post/ifood_600.png 600w,
-        assets/post/ifood_1200.png 1200w
-      "
-      sizes="(max-width: 768px) 100vw, 33vw"
-      alt="Fotografia de produto"
-      loading="lazy"
-    />
-    <div class="project-info">
-      <h3>Fotografia de Produto</h3>
-      <p>Imagens para delivery e e-commerce</p>
-    </div>
-  </div>
-
-  <!-- 🧠 Logo -->
-  <div class="project-card">
-    <img 
-      src="assets/post/logo-tipo_600.png"
-      srcset="
-        assets/post/logo-tipo_300.png 300w,
-        assets/post/logo-tipo_600.png 600w,
-        assets/post/logo-tipo_1200.png 1200w
-      "
-      sizes="(max-width: 768px) 100vw, 33vw"
-      alt="Identidade visual"
-      loading="lazy"
-    />
-    <div class="project-info">
-      <h3>Logo & Branding</h3>
-      <p>Criação de identidade visual</p>
-    </div>
-  </div>
-
-  <!-- 🎉 Post -->
-  <div class="project-card">
-    <img 
-      src="assets/post/postagem_600.png"
-      srcset="
-        assets/post/postagem_300.png 300w,
-        assets/post/postagem_600.png 600w,
-        assets/post/postagem_1200.png 1200w
-      "
-      sizes="(max-width: 768px) 100vw, 33vw"
-      alt="Post comemorativo"
-      loading="lazy"
-    />
-    <div class="project-info">
-      <h3>Posts & Campanhas</h3>
-      <p>Artes para redes sociais</p>
-    </div>
-  </div>
-
-</section>
-
-<h2>Resultados</h2>
-
-<section class="resultados reveal">
-
-<h2>Resultados Reais</h2>
-
-<div class="graficos-premium">
-
-  <!-- SEM GESTÃO -->
-  <div class="grafico-card">
-    <span>25 Dez → 24 Jan</span>
-    <small>Sem gestão</small>
-
-    <div class="grafico-wrapper">
-      <canvas id="graficoSemGestao"></canvas>
-      <div class="centro">
-        <strong id="valor1">0</strong>
-        <span>views</span>
+      </nav>
+      <div class="footer-contact">
+        <p>Marília - SP</p>
+        <p>@socialmedia_isadora</p>
+        <p>Portfólio profissional</p>
       </div>
     </div>
+    <p class="footer-bottom">© 2026 Isadora Rezende. Todos os direitos reservados.</p>
+  </footer>
 
-    <p class="growth negativo">baixo alcance</p>
+  <div class="loader" aria-hidden="true">
+    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
   </div>
 
-  <!-- COM GESTÃO -->
-  <div class="grafico-card destaque">
-    <span>24 Jan → 22 Fev</span>
-    <small>Com gestão</small>
-
-    <div class="grafico-wrapper">
-      <canvas id="graficoComGestao"></canvas>
-      <div class="centro">
-        <strong id="valor2">0</strong>
-        <span>views</span>
-      </div>
-    </div>
-
-    <p class="growth positivo" id="crescimento"></p>
-  </div>
-
-</div>
-
-<!-- GRÁFICO DE LINHA -->
-<div class="linha-evolucao">
-  <canvas id="graficoLinha"></canvas>
-</div>
-
-</section>
-
-<div class="texto">
-<p><strong>01 – Identidade visual</strong><br>
-Analiso e crio identidade visual do cliente.</p>
-
-<p><strong>02 – Criação de Conteúdo</strong><br>
-Transformo momentos em recordações únicas.</p>
-
-</div>
-
-</section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-<script type="module" src="js/main.js"></script>
-<footer>
-    <p>© 2026 Isadora Rezende.<br>Todos os direitos reservados.</p>
-    </footer>
-
-    <div class="loader">
-  <img 
-      id="logo"
-      class="img-responsiva logo-img"
-      src="assets/imagens/logo_1200x1200.png"
-      srcset="
-      assets/imagens/logo_300x300.png 300w,
-     assets/imagens/logo_600x600.png 600w,
-     assets/imagens/logo_1200x1200.png 1200w
-      "
-      sizes="(max-width: 600px) 180px,  (max-width: 1024px) 260px, 340px"
-      alt="Logo Isadora Rezende"
-  />
-    </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
-
 </html>

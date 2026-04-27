@@ -1,62 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erro 404</title>
-<link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Erro 404 | Isadora Rezende</title>
+  <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="erro">
-  <div class="page-transition"></div>
-<h1>404</h1>
-<p style="font-size: 2.8vw;">Página não encontrada</p>
+  <div class="page-transition" aria-hidden="true"></div>
 
-<div class="links-luxo">
+  <main class="erro-content">
+    <h1>404</h1>
+    <p>Página não encontrada</p>
+    <div class="links-luxo">
+      <a href="index.html">Voltar para o início</a>
+    </div>
+    <img
+      class="img-responsiva logo-img"
+      src="assets/imagens/logo_300x300.png"
+      srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+      sizes="(max-width: 600px) 160px, 220px"
+      alt="Logo Isadora Rezende"
+      width="300"
+      height="300"
+    />
+  </main>
 
-    <a href="index.html">
-      Voltar para o início
-    </a>
+  <footer class="site-footer">
+    <p class="footer-bottom">© 2026 Isadora Rezende. Todos os direitos reservados.</p>
+  </footer>
 
+  <div class="loader" aria-hidden="true">
+    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
   </div>
 
-
-<img 
-    id="logo"
-    class="img-responsiva logo-img"
-    src="assets/imagens/logo_1200x1200.png"
-    srcset="
-    assets/imagens/logo_300x300.png 300w,
-    assets/imagens/logo_600x600.png 600w,
-    assets/imagens/logo_1200x1200.png 1200w
-    "
-    sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-    alt="Logo Isadora Rezende"
-/>
-
- <script type="module" src="js/main.js"></script>
-
-<footer>
-    <p>© 2026 Isadora Rezende.<br>Todos os direitos reservados.</p>
-    </footer>
-
-    <div class="loader">
-  <img 
-      id="logo"
-      class="img-responsiva logo-img"
-      src="assets/imagens/logo_1200x1200.png"
-      srcset="
-      assets/imagens/logo_300x300.png 300w,
-     assets/imagens/logo_600x600.png 600w,
-     assets/imagens/logo_1200x1200.png 1200w
-    "
-    sizes="(max-width: 600px) 180px, (max-width: 1024px) 260px, 340px"
-   alt="Logo Isadora Rezende"
-  />
-    </div>
-
+  <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
