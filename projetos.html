@@ -173,16 +173,70 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="js/main.js"></script>
-</body>
-<script>
-setTimeout(() => {
-  console.log("TESTE GRÁFICO");
+  <script>
+const semGestao = 3876;
+const comGestao = 13086;
 
-  if (typeof Chart === "undefined") {
-    console.error("Chart.js NÃO carregou");
-  } else {
-    console.log("Chart.js OK");
+function formatar(n) {
+  return n.toLocaleString("pt-BR");
+}
+
+document.getElementById("valor1").textContent = formatar(semGestao);
+document.getElementById("valor2").textContent = formatar(comGestao);
+document.getElementById("crescimento").textContent = "+238% de crescimento";
+
+new Chart(document.getElementById("graficoSemGestao"), {
+  type: "doughnut",
+  data: {
+    datasets: [{
+      data: [semGestao, comGestao - semGestao],
+      backgroundColor: ["#999", "rgba(0,0,0,.08)"],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: "78%",
+    plugins: { legend: { display: false } }
   }
-}, 1000);
+});
+
+new Chart(document.getElementById("graficoComGestao"), {
+  type: "doughnut",
+  data: {
+    datasets: [{
+      data: [comGestao, 0],
+      backgroundColor: ["#d6b56d", "rgba(214,181,109,.12)"],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: "78%",
+    plugins: { legend: { display: false } }
+  }
+});
+
+new Chart(document.getElementById("graficoLinha"), {
+  type: "line",
+  data: {
+    labels: ["Sem gestão", "Início", "Com gestão"],
+    datasets: [{
+      data: [semGestao, 7600, comGestao],
+      borderColor: "#d6b56d",
+      backgroundColor: "rgba(214,181,109,.15)",
+      fill: true,
+      tension: .42
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } }
+  }
+});
 </script>
+</body>
 </html>
