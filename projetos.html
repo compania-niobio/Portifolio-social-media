@@ -174,18 +174,14 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="js/main.js"></script>
   <script>
-const semGestao = 3876;
-const comGestao = 13086;
+  const semGestao = 3876;
+  const comGestao = 13086;
 
-function formatar(n) {
-  return n.toLocaleString("pt-BR");
-}
+  document.getElementById("valor1").textContent = semGestao.toLocaleString("pt-BR");
+  document.getElementById("valor2").textContent = comGestao.toLocaleString("pt-BR");
+  document.getElementById("crescimento").textContent = "+238% de crescimento";
 
-document.getElementById("valor1").textContent = formatar(semGestao);
-document.getElementById("valor2").textContent = formatar(comGestao);
-document.getElementById("crescimento").textContent = "+238% de crescimento";
-
-new Chart(document.getElementById("graficoSemGestao"), {
+  new Chart(document.getElementById("graficoSemGestao"), {
   type: "doughnut",
   data: {
     datasets: [{
@@ -202,7 +198,7 @@ new Chart(document.getElementById("graficoSemGestao"), {
   }
 });
 
-new Chart(document.getElementById("graficoComGestao"), {
+  new Chart(document.getElementById("graficoComGestao"), {
   type: "doughnut",
   data: {
     datasets: [{
@@ -219,7 +215,7 @@ new Chart(document.getElementById("graficoComGestao"), {
   }
 });
 
-new Chart(document.getElementById("graficoLinha"), {
+  new Chart(document.getElementById("graficoLinha"), {
   type: "line",
   data: {
     labels: ["Sem gestão", "Início", "Com gestão"],
