@@ -476,52 +476,6 @@ header {
   text-align: center;
 }
 
-.graficos-premium {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 4vw, 34px);
-  align-items: stretch;
-}
-
-.grafico-card {
-  margin-top: 0;
-}
-
-.grafico-card > span {
-  display: block;
-  color: var(--cor-dourado);
-  font-size: .9rem;
-  letter-spacing: 1.5px;
-  margin-bottom: 8px;
-}
-
-.grafico-card > small {
-  display: block;
-  color: var(--cor-muted);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-}
-
-.grafico-card canvas {
-  width: min(100%, 280px) !important;
-  height: auto !important;
-  margin-inline: auto;
-}
-
-.grafico-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-}
-
-.grafico-wrapper svg,
-.grafico-wrapper canvas {
-  max-width: 100%;
-  height: auto;
-}
 
 .centro {
   position: absolute;
@@ -935,10 +889,7 @@ footer p {
   }
 }
 
-@media (max-width: 650px) {
-  .graficos-premium {
-    grid-template-columns: 1fr;
-  }
+
 
   :root {
     --container: min(100% - 28px, 520px);
@@ -1042,16 +993,27 @@ footer p {
     padding: 20px;
   }
 }
+/* ===== GRÁFICOS PROFISSIONAIS ===== */
+
 .graficos-premium {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 30px;
+  margin-top: 40px;
+}
+
+.grafico-card {
+  padding: 30px;
+  border-radius: 28px;
+  background: var(--cor-card);
+  box-shadow: var(--sombra-suave);
 }
 
 .grafico-wrapper {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 260px; /* 🔥 ESSENCIAL */
+  margin-top: 20px;
 }
 
 .grafico-wrapper canvas {
@@ -1061,7 +1023,7 @@ footer p {
 
 .linha-evolucao {
   width: 100%;
-  height: 320px;
+  height: 320px; /* 🔥 ESSENCIAL */
   margin-top: 50px;
 }
 
@@ -1070,8 +1032,17 @@ footer p {
   height: 100% !important;
 }
 
-@media (max-width: 700px) {
+/* MOBILE */
+@media (max-width: 768px) {
   .graficos-premium {
     grid-template-columns: 1fr;
+  }
+
+  .grafico-wrapper {
+    height: 220px;
+  }
+
+  .linha-evolucao {
+    height: 260px;
   }
 }
