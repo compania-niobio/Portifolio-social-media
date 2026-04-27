@@ -244,9 +244,7 @@ section {
 
 .perfil-foto {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  overflow: hidden;
 }
 
 .perfil-foto img {
@@ -260,6 +258,7 @@ section {
   filter: drop-shadow(0 30px 40px rgba(0,0,0,.15));
 }
 
+/* BASE (dia) */
 .perfil-foto::after {
   content: "";
   position: absolute;
@@ -269,7 +268,8 @@ section {
   width: 120%;
   height: 40%;
 
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   background: linear-gradient(
     to bottom,
@@ -278,6 +278,20 @@ section {
     var(--cor-fundo)
   );
 
+  transition: backdrop-filter 0.8s ease, background 0.8s ease;
+}
+.tema-dia .perfil-foto::after {
+  backdrop-filter: blur(10px);
+}
+.tema-noite .perfil-foto::after {
+  backdrop-filter: blur(16px);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.65),
+    #050505
+  );
 }
 
 .perfil-texto {
