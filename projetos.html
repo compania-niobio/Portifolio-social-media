@@ -105,35 +105,39 @@
     </section>
 
     <section class="resultados reveal">
-      <h2>Resultados Reais</h2>
+  <div class="results-header">
+    <span>Resultados</span>
+    <h2>Em números</h2>
+    <p>Comparativo de alcance antes e depois da gestão estratégica.</p>
+  </div>
 
-      <div class="graficos-premium">
-        <article class="grafico-card">
-          <span>25 Dez → 24 Jan</span>
-          <small>Sem gestão</small>
-          <div class="grafico-wrapper">
-            <canvas id="graficoSemGestao" aria-label="Gráfico sem gestão"></canvas>
-            <div class="centro">
-              <strong id="valor1">3.876</strong>
-              <span>views</span>
-            </div>
-          </div>
-          <p class="growth negativo">baixo alcance</p>
-        </article>
+  <div class="numbers-grid">
+    <article class="number-card">
+      <strong id="valor1">3.876</strong>
+      <span>views</span>
+      <h3>Sem gestão</h3>
+      <p>25 Dez → 24 Jan</p>
+    </article>
 
-        <article class="grafico-card destaque">
-          <span>24 Jan → 22 Fev</span>
-          <small>Com gestão</small>
-          <div class="grafico-wrapper">
-            <canvas id="graficoComGestao" aria-label="Gráfico com gestão"></canvas>
-            <div class="centro">
-              <strong id="valor2">13.086</strong>
-              <span>views</span>
-            </div>
-          </div>
-          <p class="growth positivo" id="crescimento">+238% de crescimento</p>
-        </article>
-      </div>
+    <article class="number-card destaque">
+      <strong id="valor2">13.086</strong>
+      <span>views</span>
+      <h3>Com gestão</h3>
+      <p>24 Jan → 22 Fev</p>
+    </article>
+
+    <article class="number-card">
+      <strong id="crescimento">+238%</strong>
+      <span>crescimento</span>
+      <h3>Evolução real</h3>
+      <p>Aumento de alcance após estratégia.</p>
+    </article>
+  </div>
+
+  <div class="linha-evolucao">
+    <canvas id="graficoLinha"></canvas>
+  </div>
+</section>
 
       <div class="linha-evolucao">
         <canvas id="graficoLinha" aria-label="Evolução dos resultados"></canvas>
@@ -172,49 +176,12 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-  const semGestao = 3876;
-  const comGestao = 13086;
 
-  document.getElementById("valor1").textContent = semGestao.toLocaleString("pt-BR");
-  document.getElementById("valor2").textContent = comGestao.toLocaleString("pt-BR");
-  document.getElementById("crescimento").textContent = "+238% de crescimento";
+<script>
+const semGestao = 3876;
+const comGestao = 13086;
 
-  new Chart(document.getElementById("graficoSemGestao"), {
-  type: "doughnut",
-  data: {
-    datasets: [{
-      data: [semGestao, comGestao - semGestao],
-      backgroundColor: ["#999", "rgba(0,0,0,.08)"],
-      borderWidth: 0
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: "78%",
-    plugins: { legend: { display: false } }
-  }
-});
-
-  new Chart(document.getElementById("graficoComGestao"), {
-  type: "doughnut",
-  data: {
-    datasets: [{
-      data: [comGestao, 0],
-      backgroundColor: ["#d6b56d", "rgba(214,181,109,.12)"],
-      borderWidth: 0
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: "78%",
-    plugins: { legend: { display: false } }
-  }
-});
-
-  new Chart(document.getElementById("graficoLinha"), {
+new Chart(document.getElementById("graficoLinha"), {
   type: "line",
   data: {
     labels: ["Sem gestão", "Início", "Com gestão"],
