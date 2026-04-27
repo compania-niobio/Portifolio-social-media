@@ -231,12 +231,12 @@ section {
 /* ===== PERFIL ESTILO APRESENTAÇÃO ===== */
 
 .perfil-apresentacao {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1280px, calc(100% - 40px));
   min-height: 100svh;
   margin: 0 auto;
-  padding: 120px 0 70px;
+  padding: 110px 0 60px;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
   gap: clamp(30px, 5vw, 80px);
   overflow: hidden;
@@ -244,54 +244,44 @@ section {
 
 .perfil-foto {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: visible;
 }
 
 .perfil-foto img {
-    width: clamp(420px, 45vw, 700px);
+  width: clamp(520px, 48vw, 760px);
   max-width: none;
   height: auto;
-  transform: scale(1.15);
-  transform-origin: bottom center;
   object-fit: contain;
   object-position: bottom center;
-  filter: drop-shadow(0 30px 40px rgba(0,0,0,.15));
-  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  transform: translateY(35px) scale(1.08);
+  transform-origin: bottom center;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,.18));
+
+  -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
 }
 
-/* BASE (dia) */
+/* remove o quadrado borrado */
 .perfil-foto::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 30%;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0),
-    var(--cor-fundo)
-  );
-
-  pointer-events: none;
+  display: none;
 }
 
-.tema-dia .perfil-foto::after {
-  backdrop-filter: blur(10px);
-}
-.tema-noite .perfil-foto::after {
-  backdrop-filter: blur(16px);
+/* celular/tablet */
+@media (max-width: 900px) {
+  .perfil-apresentacao {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 100px 18px 50px;
+  }
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0),
-    rgba(0,0,0,0.65),
-    #050505
-  );
+  .perfil-foto img {
+    width: min(115vw, 520px);
+    transform: translateY(20px) scale(1.05);
+  }
 }
-
 .perfil-texto {
   text-align: center;
   max-width: 720px;
