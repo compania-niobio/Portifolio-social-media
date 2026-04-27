@@ -175,4 +175,15 @@
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
+<script>
+setTimeout(() => {
+  console.log("TESTE GRÁFICO");
+
+  if (typeof Chart === "undefined") {
+    console.error("Chart.js NÃO carregou");
+  } else {
+    console.log("Chart.js OK");
+  }
+}, 1000);
+</script>
 </html>
