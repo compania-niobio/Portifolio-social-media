@@ -7,6 +7,7 @@
   <title>Projetos | Isadora Rezende</title>
   <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 
 <body>
@@ -105,42 +106,37 @@
     </section>
 
     <section class="resultados reveal">
-  <div class="results-header">
-    <span>Resultados</span>
-    <h2>Em números</h2>
-    <p>Comparativo de alcance antes e depois da gestão estratégica.</p>
-  </div>
+      <div class="results-header">
+        <span>Resultados</span>
+        <h2>Em números</h2>
+        <p>Comparativo de alcance antes e depois da gestão estratégica.</p>
+      </div>
 
-  <div class="numbers-grid">
-    <article class="number-card">
-      <strong id="valor1">3.876</strong>
-      <span>views</span>
-      <h3>Sem gestão</h3>
-      <p>25 Dez → 24 Jan</p>
-    </article>
+      <div class="numbers-grid">
+        <article class="number-card">
+          <strong id="valor1">3.876</strong>
+          <span>views</span>
+          <h3>Sem gestão</h3>
+          <p>25 Dez → 24 Jan</p>
+        </article>
 
-    <article class="number-card destaque">
-      <strong id="valor2">13.086</strong>
-      <span>views</span>
-      <h3>Com gestão</h3>
-      <p>24 Jan → 22 Fev</p>
-    </article>
+        <article class="number-card destaque">
+          <strong id="valor2">13.086</strong>
+          <span>views</span>
+          <h3>Com gestão</h3>
+          <p>24 Jan → 22 Fev</p>
+        </article>
 
-    <article class="number-card">
-      <strong id="crescimento">+238%</strong>
-      <span>crescimento</span>
-      <h3>Evolução real</h3>
-      <p>Aumento de alcance após estratégia.</p>
-    </article>
-  </div>
+        <article class="number-card">
+          <strong id="crescimento">+238%</strong>
+          <span>crescimento</span>
+          <h3>Evolução real</h3>
+          <p>Aumento de alcance após estratégia.</p>
+        </article>
+      </div>
 
-  <div class="linha-evolucao">
-    <canvas id="graficoLinha"></canvas>
-  </div>
-</section>
-
-      <div class="linha-evolucao">
-        <canvas id="graficoLinha" aria-label="Evolução dos resultados"></canvas>
+      <div class="linha-evolucao" aria-label="Evolução dos resultados">
+        <canvas id="graficoLinha"></canvas>
       </div>
     </section>
 
@@ -176,29 +172,39 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const semGestao = 3876;
+    const comGestao = 13086;
+    const chartCanvas = document.getElementById("graficoLinha");
 
-<script>
-const semGestao = 3876;
-const comGestao = 13086;
-
-new Chart(document.getElementById("graficoLinha"), {
-  type: "line",
-  data: {
-    labels: ["Sem gestão", "Início", "Com gestão"],
-    datasets: [{
-      data: [semGestao, 7600, comGestao],
-      borderColor: "#d6b56d",
-      backgroundColor: "rgba(214,181,109,.15)",
-      fill: true,
-      tension: .42
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } }
-  }
-});
-</script>
+    if (chartCanvas && typeof Chart !== "undefined") {
+      new Chart(chartCanvas, {
+        type: "line",
+        data: {
+          labels: ["Sem gestão", "Início", "Com gestão"],
+          datasets: [{
+            data: [semGestao, 7600, comGestao],
+            borderColor: "#d6b56d",
+            backgroundColor: "rgba(214,181,109,.15)",
+            pointBackgroundColor: "#d6b56d",
+            pointBorderColor: "#d6b56d",
+            pointRadius: 4,
+            borderWidth: 3,
+            fill: true,
+            tension: .42
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { beginAtZero: true, ticks: { callback: value => Number(value).toLocaleString("pt-BR") } }
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
