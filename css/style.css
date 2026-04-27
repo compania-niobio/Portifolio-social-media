@@ -153,29 +153,9 @@ header {
   align-items: center;
   pointer-events: none;
 
-  --nav-bg: rgba(255, 255, 255, 0.42);
-  --nav-text: #111;
-  --nav-border: rgba(255, 255, 255, 0.55);
 }
 
-header.nav-dark,
-.tema-noite header {
-  --nav-bg: rgba(5, 5, 5, 0.62);
-  --nav-text: #fff;
-  --nav-border: rgba(214, 181, 109, 0.25);
-}
 
-header.nav-light {
-  --nav-bg: rgba(255, 255, 255, 0.5);
-  --nav-text: #111;
-  --nav-border: rgba(0, 0, 0, 0.08);
-}
-
-header.nav-gold {
-  --nav-bg: rgba(214, 181, 109, 0.22);
-  --nav-text: #fff;
-  --nav-border: rgba(214, 181, 109, 0.5);
-}
 
 .logo {
   position: absolute;
@@ -186,53 +166,6 @@ header.nav-gold {
   pointer-events: auto;
 }
 
-header nav {
-  pointer-events: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(18px, 3vw, 42px);
-  max-width: 100%;
-  padding: 16px clamp(24px, 4vw, 52px);
-  border-radius: 999px;
-  background: var(--nav-bg);
-  border: 1px solid var(--nav-border);
-  backdrop-filter: blur(22px) saturate(160%);
-  -webkit-backdrop-filter: blur(22px) saturate(160%);
-  box-shadow: 0 20px 60px rgba(0,0,0,.16);
-  transition: background .4s ease, border .4s ease, box-shadow .4s ease;
-}
-
-header nav a {
-  position: relative;
-  white-space: nowrap;
-  color: var(--nav-text);
-  font-size: clamp(11px, 1.2vw, 14px);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: color .3s ease, transform .3s ease;
-}
-
-header nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -7px;
-  width: 0;
-  height: 1px;
-  background: var(--cor-dourado);
-  transform: translateX(-50%);
-  transition: width .35s ease;
-}
-
-header nav a:hover {
-  color: var(--cor-dourado);
-  transform: translateY(-2px);
-}
-
-header nav a:hover::after {
-  width: 100%;
-}
 
 
 .site-header .brand {
@@ -257,9 +190,6 @@ header nav a:hover::after {
 }
 
 /* Menu superior removido: se algum nav antigo ficar no header, não aparece */
-.site-header > nav {
-  display: none !important;
-}
 
 /* =========================================================
    HERO
