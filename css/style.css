@@ -186,7 +186,7 @@ header.nav-gold {
   pointer-events: auto;
 }
 
-nav {
+header nav {
   pointer-events: auto;
   display: flex;
   justify-content: center;
@@ -203,7 +203,7 @@ nav {
   transition: background .4s ease, border .4s ease, box-shadow .4s ease;
 }
 
-nav a {
+header nav a {
   position: relative;
   white-space: nowrap;
   color: var(--nav-text);
@@ -213,7 +213,7 @@ nav a {
   transition: color .3s ease, transform .3s ease;
 }
 
-nav a::after {
+header nav a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -225,13 +225,40 @@ nav a::after {
   transition: width .35s ease;
 }
 
-nav a:hover {
+header nav a:hover {
   color: var(--cor-dourado);
   transform: translateY(-2px);
 }
 
-nav a:hover::after {
+header nav a:hover::after {
   width: 100%;
+}
+
+
+.site-header .brand {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(64px, 8vw, 92px);
+  height: clamp(64px, 8vw, 92px);
+  border-radius: 999px;
+  background: rgba(255,255,255,.38);
+  border: 1px solid var(--nav-border);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: 0 18px 50px rgba(0,0,0,.14);
+}
+
+.site-header .brand img {
+  width: 72%;
+  height: auto;
+  margin: 0;
+}
+
+/* Menu superior removido: se algum nav antigo ficar no header, não aparece */
+.site-header > nav {
+  display: none !important;
 }
 
 /* =========================================================
@@ -517,6 +544,39 @@ nav a:hover::after {
   width: var(--container);
   margin-inline: auto;
   text-align: center;
+}
+
+.graficos-premium {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 34px);
+  align-items: stretch;
+}
+
+.grafico-card {
+  margin-top: 0;
+}
+
+.grafico-card > span {
+  display: block;
+  color: var(--cor-dourado);
+  font-size: .9rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.grafico-card > small {
+  display: block;
+  color: var(--cor-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.grafico-card canvas {
+  width: min(100%, 280px) !important;
+  height: auto !important;
+  margin-inline: auto;
 }
 
 .grafico-wrapper {
@@ -868,7 +928,7 @@ footer p {
     width: 44px;
   }
 
-  nav {
+  header nav {
     max-width: calc(100vw - 24px);
     gap: 18px;
     padding: 13px 20px;
@@ -876,11 +936,11 @@ footer p {
     scrollbar-width: none;
   }
 
-  nav::-webkit-scrollbar {
+  header nav::-webkit-scrollbar {
     display: none;
   }
 
-  nav a {
+  header nav a {
     font-size: 10px;
     letter-spacing: 1.4px;
   }
@@ -946,6 +1006,10 @@ footer p {
 }
 
 @media (max-width: 650px) {
+  .graficos-premium {
+    grid-template-columns: 1fr;
+  }
+
   :root {
     --container: min(100% - 28px, 520px);
   }
@@ -1026,7 +1090,7 @@ footer p {
 }
 
 @media (max-width: 430px) {
-  nav {
+  header nav {
     justify-content: flex-start;
     padding-inline: 16px;
   }
