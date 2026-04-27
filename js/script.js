@@ -404,3 +404,41 @@ if (window.innerWidth <= 768 && heroContent) {
   heroContent.style.opacity = "1";
   heroContent.style.filter = "none";
 }
+// Detecta tipo de dispositivo
+function getDeviceType() {
+  const width = window.innerWidth;
+
+  const isTouch = 
+    'ontouchstart' in window || 
+    navigator.maxTouchPoints > 0;
+
+  if (width <= 480) return 'mobile';
+  if (width <= 1024 && isTouch) return 'tablet';
+  return 'desktop';
+}
+
+// Aplica classe no <body>
+function applyDeviceClass() {
+  const device = getDeviceType();
+
+  document.body.classList.remove('mobile', 'tablet', 'desktop');
+  document.body.classList.add(device);
+
+  console.log("Dispositivo:", device);
+}
+
+// Executa ao carregar
+applyDeviceClass();
+
+// Atualiza ao redimensionar
+window.addEventListener('resize', applyDeviceClass);
+
+const heroContent = document.querySelector(".hero-content, .heroContent, .content");
+
+const isMobileOrTablet = window.innerWidth <= 1024;
+
+if (heroContent && isMobileOrTablet) {
+  heroContent.style.transform = "none";
+  heroContent.style.opacity = "1";
+  heroContent.style.filter = "none";
+}
