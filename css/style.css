@@ -256,6 +256,7 @@ section {
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(0 30px 40px rgba(0,0,0,.15));
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
 
 /* BASE (dia) */
