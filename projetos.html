@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Projetos</title>
+<link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="page-transition"></div>
+<header>
+    <img src="assets/icons/1.png" class="logo">
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+<section class="projetos">
+
+<h1>Projetos</h1>
+
+<div class="grid">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+
+<h2>Resultados</h2>
+
+<section class="resultados reveal">
+
+<h2>Resultados Reais</h2>
+
+<div class="graficos-premium">
+
+  <!-- SEM GESTÃO -->
+  <div class="grafico-card">
+    <span>25 Dez → 24 Jan</span>
+    <small>Sem gestão</small>
+
+    <div class="grafico-wrapper">
+      <canvas id="graficoSemGestao"></canvas>
+      <div class="centro">
+        <strong id="valor1">0</strong>
+        <span>views</span>
+      </div>
+    </div>
+
+    <p class="growth negativo">baixo alcance</p>
+  </div>
+
+  <!-- COM GESTÃO -->
+  <div class="grafico-card destaque">
+    <span>24 Jan → 22 Fev</span>
+    <small>Com gestão</small>
+
+    <div class="grafico-wrapper">
+      <canvas id="graficoComGestao"></canvas>
+      <div class="centro">
+        <strong id="valor2">0</strong>
+        <span>views</span>
+      </div>
+    </div>
+
+    <p class="growth positivo" id="crescimento"></p>
+  </div>
+
+</div>
+
+<!-- GRÁFICO DE LINHA -->
+<div class="linha-evolucao">
+  <canvas id="graficoLinha"></canvas>
+</div>
+
+</section>
+
+<div class="texto">
+<p><strong>01 – Identidade visual</strong><br>
+Analiso e crio identidade visual do cliente.</p>
+
+<p><strong>02 – Criação de Conteúdo</strong><br>
+Transformo momentos em recordações únicas.</p>
+
+</div>
+
+</section>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<footer>
+    <p>© 2026 Isadora Rezende.<br>Todos os direitos reservados.</p>
+    </footer>
+</body>
+<div class="loader">
+
+
+  <img src="assets/icons/2.png" alt="Logo Isadora Rezende">
+
+</div>
+</html>
