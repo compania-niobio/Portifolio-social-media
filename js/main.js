@@ -6,6 +6,7 @@ import { initParallax } from "./modules/parallax.js";
 import { initCharts } from "./modules/charts.js";
 import { initLazyLoad } from "./modules/lazyLoad.js";
 import { initButtonEffects } from "./modules/buttonEffects.js";
+import { initFloatingAssets } from "./modules/floatingAssets.js";
 
 const safeInit = (name, callback) => {
   try {
@@ -23,4 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   safeInit("Parallax", initParallax);
   safeInit("Charts", initCharts);
   safeInit("LazyLoad", initLazyLoad);
+  safeInit("ButtonEffects", initButtonEffects);
+  safeInit("FloatingAssets", initFloatingAssets);       
 });
