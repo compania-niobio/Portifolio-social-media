@@ -28,32 +28,24 @@
   </header>
 
   <main>
-    <section class="hero hero-equipamentos" id="inicio">
-  <img class="hero-product conectar"
-    src="assets/imagens/conectar_600.png"
-    srcset="assets/imagens/conectar_300.png 300w, assets/imagens/conectar_600.png 600w, assets/imagens/conectar_1200.png 1200w"
-    sizes="(max-width: 650px) 42vw, 360px"
-    alt="Conector Hollyland" />
+    <section class="hero hero-floating" id="inicio" data-floating-area="hero">
+      <div class="hero-bg-items" aria-hidden="true">
+        <img class="float-item item-instagram" data-float src="assets/imagens/instagram_600x600.png" srcset="assets/imagens/instagram_300x300.png 300w, assets/imagens/instagram_600x600.png 600w, assets/imagens/instagram_1200x1200.png 1200w" sizes="(max-width:650px) 44vw, 340px" alt="" />
+        <img class="float-item item-case" data-float src="assets/imagens/gravador_atras_600.png" srcset="assets/imagens/gravador_atras_300.png 300w, assets/imagens/gravador_atras_600.png 600w, assets/imagens/gravador_atras_1200.png 1200w" sizes="(max-width:650px) 48vw, 390px" alt="" />
+        <img class="float-item item-conectar" data-float src="assets/imagens/conectar_600.png" srcset="assets/imagens/conectar_300.png 300w, assets/imagens/conectar_600.png 600w, assets/imagens/conectar_1200.png 1200w" sizes="(max-width:650px) 40vw, 300px" alt="" />
+        <img class="float-item item-gravador" data-float src="assets/imagens/gravador_600.png" srcset="assets/imagens/gravador_300.png 300w, assets/imagens/gravador_600.png 600w, assets/imagens/gravador_1200.png 1200w" sizes="(max-width:650px) 40vw, 280px" alt="" />
+        <img class="float-item item-luz" data-float src="assets/imagens/luz_600.png" srcset="assets/imagens/luz_300.png 300w, assets/imagens/luz_600.png 600w, assets/imagens/luz_1200.png 1200w" sizes="(max-width:650px) 36vw, 260px" alt="" />
+      </div>
 
-  <div class="hero-content">
-    <span class="hero-kicker">Social Media • Videomaker • Storymaker</span>
-    <h1>Portfólio</h1>
-    <p>Conteúdo estratégico, captação profissional e presença digital com qualidade visual.</p>
-    <a href="perfil.html" class="btn">Conheça</a>
-  </div>
+      <div class="hero-safe-area" aria-hidden="true"></div>
 
-  <img class="hero-product gravador"
-    src="assets/imagens/gravador_600.png"
-    srcset="assets/imagens/gravador_300.png 300w, assets/imagens/gravador_600.png 600w, assets/imagens/gravador_1200.png 1200w"
-    sizes="(max-width: 650px) 44vw, 380px"
-    alt="Microfone Hollyland" />
-
-  <img class="hero-product case"
-    src="assets/imagens/gravador_atras_600.png"
-    srcset="assets/imagens/gravador_atras_300.png 300w, assets/imagens/gravador_atras_600.png 600w, assets/imagens/gravador_atras_1200.png 1200w"
-    sizes="(max-width: 650px) 58vw, 460px"
-    alt="Case Hollyland" />
-</section>
+      <div class="hero-content">
+        <span class="hero-kicker">Social Media • Vídeo • Conteúdo</span>
+        <h1>Portfólio</h1>
+        <p>Transformo registros do dia a dia em conteúdos que atraem, conectam e vendem.</p>
+        <a href="perfil.html" class="btn">Conheça meu trabalho</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -62,14 +54,12 @@
         <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
         <p>Social Media • Videomaker • Storymaker</p>
       </div>
-
       <nav class="footer-links" aria-label="Links do rodapé">
         <a href="index.html">Início</a>
         <a href="perfil.html">Perfil</a>
         <a href="projetos.html">Projetos</a>
         <a href="contato.html">Contato</a>
       </nav>
-
       <div class="footer-contact">
         <p>Marília - SP</p>
         <p>@socialmedia_isadora</p>
@@ -85,5 +75,6 @@
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/floatingAssets.js"></script>
 </body>
 </html>

@@ -28,39 +28,35 @@
   </header>
 
   <main>
-    <section class="perfil perfil-apresentacao">
-  <div class="perfil-foto">
-    <img
-      id="pessoa"
-      src="assets/imagens/isadora_black_1200.png"
-      alt="Isadora Rezende"
-    />
-  </div>
+    <section class="perfil perfil-card-modelo" data-floating-area="perfil">
+      <div class="perfil-decor" aria-hidden="true">
+        <img class="float-item item-case" data-float src="assets/imagens/gravador_atras_600.png" srcset="assets/imagens/gravador_atras_300.png 300w, assets/imagens/gravador_atras_600.png 600w, assets/imagens/gravador_atras_1200.png 1200w" alt="" />
+        <img class="float-item item-luz" data-float src="assets/imagens/luz_600.png" srcset="assets/imagens/luz_300.png 300w, assets/imagens/luz_600.png 600w, assets/imagens/luz_1200.png 1200w" alt="" />
+      </div>
 
-  <div class="perfil-texto">
-    <h1>
-      <span>ISADORA</span>
-      REZENDE
-    </h1>
+      <div class="perfil-foto-card">
+        <img
+          id="pessoa"
+          class="pessoa-img"
+          src="assets/imagens/isadora_black_1200.png"
+          alt="Isadora Rezende"
+        />
+      </div>
 
-    <p>
-      Me chamo Isadora, tenho 2 anos de experiência na área de social media,
-      gestão de redes sociais, videomaker e storymaker.
-    </p>
+      <div class="perfil-info-card">
+        <span class="perfil-kicker">Quem sou eu?</span>
+        <h1>Prazer,<br><strong>Isadora Rezende</strong></h1>
 
-    <h2>O que faço?</h2>
-    <p>
-      Produzo conteúdos, reels, posts, stories, trends, vídeos para eventos
-      e registro em tempo real.
-    </p>
+        <div class="perfil-fatos">
+          <p><strong>2 anos</strong> criando conteúdo estratégico para redes sociais.</p>
+          <p><strong>Social media, videomaker e storymaker</strong> para marcas que querem aparecer com profissionalismo.</p>
+          <p><strong>Reels, stories, posts e registros em tempo real</strong> com direção, estética e agilidade.</p>
+          <p><strong>Meu diferencial:</strong> planejo o roteiro do dia, defino ângulos, músicas, cores e entrego conteúdo com intenção.</p>
+        </div>
 
-    <h2>Meu Diferencial</h2>
-    <p>
-      Eu crio o roteiro do dia de acordo com as expectativas do cliente,
-      escolha de músicas, cores e elementos exclusivos para cada projeto.
-    </p>
-  </div>
-</section>
+        <a href="projetos.html" class="btn perfil-cta">Ver projetos</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -90,5 +86,6 @@
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/floatingAssets.js"></script>
 </body>
 </html>
