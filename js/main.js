@@ -23,5 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
   safeInit("Parallax", initParallax);
   safeInit("Charts", initCharts);
   safeInit("LazyLoad", initLazyLoad);
-  safeInit("ButtonEffects", initButtonEffects);
 });
