@@ -863,3 +863,99 @@ body.tema-noite .hero-index-luxo .hero-content::before {
     --opacity: .36;
   }
 }
+
+
+/* =========================================================
+   GALERIA HORIZONTAL - CATEGORIA LOGOTIPO
+   ========================================================= */
+.logo-gallery-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(145deg, rgba(214,181,109,.12), rgba(255,255,255,.35));
+}
+
+.logo-gallery::-webkit-scrollbar {
+  height: 7px;
+}
+
+.logo-gallery::-webkit-scrollbar-track {
+  background: rgba(20,17,15,.08);
+}
+
+.logo-gallery::-webkit-scrollbar-thumb {
+  background: var(--cor-dourado);
+  border-radius: 999px;
+}
+
+.logo-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.project-card.logotipo .logo-slide img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: contain;
+  padding: clamp(24px, 4vw, 48px);
+  background: transparent;
+}
+
+.gallery-hint {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 4;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(5,5,5,.68);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.logo-gallery-card .project-info {
+  z-index: 5;
+}
+
+@media (max-width: 650px) {
+  .logo-gallery,
+  .logo-slide {
+    min-height: auto;
+  }
+
+  .project-card.logotipo .logo-slide img {
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 28px;
+  }
+
+  .gallery-hint {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+  }
+}
