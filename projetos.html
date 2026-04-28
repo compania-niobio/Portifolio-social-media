@@ -105,6 +105,47 @@
           </div>
         </article>
 
+
+        <article class="project-card casamento gallery-card">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Imagem anterior">‹</button>
+
+          <div class="project-gallery casamento-gallery" aria-label="Galeria de casamento">
+            <figure class="gallery-slide">
+              <img
+                src="assets/post/alianca_600.png"
+                srcset="assets/post/alianca_300.png 300w, assets/post/alianca_600.png 600w, assets/post/alianca_1200.png 1200w"
+                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                alt="Detalhe de alianças em porta-alianças personalizado"
+                width="600"
+                height="600"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure class="gallery-slide">
+              <img
+                src="assets/post/perso-casamento_600.png"
+                srcset="assets/post/perso-casamento_300.png 300w, assets/post/perso-casamento_600.png 600w, assets/post/perso-casamento_1200.png 1200w"
+                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                alt="Cerimônia de casamento ao ar livre"
+                width="600"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima imagem">›</button>
+
+          <div class="gallery-hint" aria-hidden="true">Arraste para o lado</div>
+
+          <div class="project-info">
+            <span>Casamento</span>
+            <h3>Momentos Especiais</h3>
+            <p>Registros de cerimônia, detalhes e conteúdos para eventos.</p>
+          </div>
+        </article>
+
         <article class="project-card eventos">
           <img
             src="assets/post/postagem_600.png"
@@ -222,10 +263,12 @@
   </script>
 
   <script>
-    document.querySelectorAll(".logo-gallery").forEach((gallery) => {
+    document.querySelectorAll(".project-gallery, .logo-gallery").forEach((gallery) => {
       let isDown = false;
       let startX = 0;
       let scrollLeft = 0;
+
+      const getSlideWidth = () => gallery.querySelector("figure")?.offsetWidth || gallery.clientWidth;
 
       gallery.addEventListener("mousedown", (event) => {
         isDown = true;
@@ -251,6 +294,20 @@
         const walk = (x - startX) * 1.4;
         gallery.scrollLeft = scrollLeft - walk;
       });
+
+      const card = gallery.closest(".gallery-card");
+      if (card) {
+        const prev = card.querySelector(".gallery-prev");
+        const next = card.querySelector(".gallery-next");
+
+        prev?.addEventListener("click", () => {
+          gallery.scrollBy({ left: -getSlideWidth(), behavior: "smooth" });
+        });
+
+        next?.addEventListener("click", () => {
+          gallery.scrollBy({ left: getSlideWidth(), behavior: "smooth" });
+        });
+      }
     });
   </script>
 
