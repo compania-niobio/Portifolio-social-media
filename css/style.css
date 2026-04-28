@@ -959,3 +959,27 @@ body.tema-noite .hero-index-luxo .hero-content::before {
     font-size: 10px;
   }
 }
+
+
+/* =========================================================
+   DESKTOP: ARRASTAR GALERIA COM MOUSE
+   ========================================================= */
+.logo-gallery {
+  cursor: grab;
+  user-select: none;
+}
+
+.logo-gallery:active,
+.logo-gallery.is-dragging {
+  cursor: grabbing;
+}
+
+.logo-gallery.is-dragging {
+  scroll-snap-type: none;
+}
+
+.logo-gallery img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}

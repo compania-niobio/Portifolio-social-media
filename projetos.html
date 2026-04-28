@@ -220,5 +220,39 @@
       });
     }
   </script>
+
+  <script>
+    document.querySelectorAll(".logo-gallery").forEach((gallery) => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      gallery.addEventListener("mousedown", (event) => {
+        isDown = true;
+        gallery.classList.add("is-dragging");
+        startX = event.pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+      });
+
+      gallery.addEventListener("mouseleave", () => {
+        isDown = false;
+        gallery.classList.remove("is-dragging");
+      });
+
+      gallery.addEventListener("mouseup", () => {
+        isDown = false;
+        gallery.classList.remove("is-dragging");
+      });
+
+      gallery.addEventListener("mousemove", (event) => {
+        if (!isDown) return;
+        event.preventDefault();
+        const x = event.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 1.4;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+    });
+  </script>
+
 </body>
 </html>
