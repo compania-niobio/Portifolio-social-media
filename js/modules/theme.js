@@ -16,19 +16,19 @@ const paths = {
     `,
   },
   dayPerson: {
-    src: "assets/imagens/person_black_1200x1200.png",
+    src: "assets/imagens/isadora_black_1200x1200.png",
     srcset: `
-      assets/imagens/person_black_300x300.png 300w,
-      assets/imagens/person_black_600x600.png 600w,
-      assets/imagens/person_black_1200x1200.png 1200w
+      assets/imagens/isadora_black_300.png 300w,
+      assets/imagens/isadora_black_600.png 600w,
+      assets/imagens/isadora_black_1200.png 1200w
     `,
   },
   nightPerson: {
-    src: "assets/imagens/person_cut_1200x1200.png",
+    src: "assets/imagens/isadora_1200.png",
     srcset: `
-      assets/imagens/person_cut_300x300.png 300w,
-      assets/imagens/person_cut_600x600.png 600w,
-      assets/imagens/person_cut_1200x1200.png 1200w
+      assets/imagens/isadora_300.png 300w,
+      assets/imagens/isadora_600.png 600w,
+      assets/imagens/isadora_1200.png 1200w
     `,
   },
 };
