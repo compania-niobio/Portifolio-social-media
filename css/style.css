@@ -713,7 +713,6 @@ html.tema-noite .perfil-fatos strong{color:var(--cor-dourado);}
   margin-inline: auto;
 }
 
-/* evita que as imagens invadam texto/botão */
 .hero-index-luxo .hero-content::before {
   content: "";
   position: absolute;
@@ -736,14 +735,14 @@ body.tema-noite .hero-index-luxo .hero-content::before {
 
 .hero-index-luxo .float-item {
   position: absolute;
-  left: var(--x);
-  top: var(--y);
+  left: var(--x) !important;
+  top: var(--y) !important;
   max-width: none !important;
   height: auto;
   z-index: 1;
   pointer-events: none;
   user-select: none;
-  transform: translate(-50%, -50%) rotate(var(--rotate)) scale(var(--scale));
+  transform: translate(-50%, -50%) rotate(var(--rotate)) scale(var(--scale)) !important;
   transform-origin: center;
   opacity: var(--opacity, .72);
   filter: drop-shadow(0 34px 48px rgba(0,0,0,.32));
@@ -752,7 +751,6 @@ body.tema-noite .hero-index-luxo .hero-content::before {
   will-change: transform;
 }
 
-/* POSIÇÕES ASSIMÉTRICAS — laterais e base, sem formar linha */
 .hero-index-luxo .hero-bg-items .float-item:nth-child(1) {
   --x: 6%;
   --y: 63%;
