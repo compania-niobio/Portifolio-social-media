@@ -1168,3 +1168,55 @@ body.tema-noite .hero-index-luxo .hero-content::before {
     font-size: 10px;
   }
 }
+
+
+/* =========================================================
+   AUTOPLAY LEVE - CARROSSEL DE AGÊNCIA
+   ========================================================= */
+.autoplay-gallery-card .gallery-hint::after,
+.gallery-card .gallery-hint::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: var(--cor-dourado);
+  box-shadow: 0 0 12px rgba(214,181,109,.85);
+  animation: galleryPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes galleryPulse {
+  0%, 100% {
+    opacity: .35;
+    transform: scale(.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* setas também aparecem no logotipo */
+.logo-gallery-card .gallery-arrow {
+  opacity: .12;
+}
+
+.logo-gallery-card:hover .gallery-arrow,
+.gallery-card:hover .gallery-arrow {
+  opacity: .72;
+}
+
+/* deixa a interação suave e premium */
+.project-gallery,
+.logo-gallery {
+  scroll-padding-inline: 0;
+  overscroll-behavior-inline: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .autoplay-gallery-card .gallery-hint::after,
+  .gallery-card .gallery-hint::after {
+    animation: none;
+  }
+}

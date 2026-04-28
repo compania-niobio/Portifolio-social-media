@@ -69,7 +69,9 @@
           </div>
         </article>
 
-        <article class="project-card logotipo logo-gallery-card">
+        <article class="project-card logotipo logo-gallery-card gallery-card autoplay-gallery-card">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Logotipo anterior">‹</button>
+
           <div class="logo-gallery" aria-label="Galeria de logotipos">
             <figure class="logo-slide">
               <img
@@ -95,6 +97,8 @@
               />
             </figure>
           </div>
+
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Próximo logotipo">›</button>
 
           <div class="gallery-hint" aria-hidden="true">Arraste para o lado</div>
 
@@ -267,11 +271,57 @@
       let isDown = false;
       let startX = 0;
       let scrollLeft = 0;
+      let autoplayTimer = null;
+      let autoplayPaused = false;
 
       const getSlideWidth = () => gallery.querySelector("figure")?.offsetWidth || gallery.clientWidth;
+      const slides = Array.from(gallery.querySelectorAll("figure"));
+      const card = gallery.closest(".gallery-card");
+
+      const goNext = () => {
+        const slideWidth = getSlideWidth();
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+        const isLast = gallery.scrollLeft >= maxScroll - 10;
+
+        gallery.scrollTo({
+          left: isLast ? 0 : gallery.scrollLeft + slideWidth,
+          behavior: "smooth"
+        });
+      };
+
+      const goPrev = () => {
+        const slideWidth = getSlideWidth();
+        const isFirst = gallery.scrollLeft <= 10;
+
+        gallery.scrollTo({
+          left: isFirst ? gallery.scrollWidth : gallery.scrollLeft - slideWidth,
+          behavior: "smooth"
+        });
+      };
+
+      const startAutoplay = () => {
+        if (slides.length <= 1 || autoplayTimer) return;
+
+        autoplayTimer = window.setInterval(() => {
+          if (!autoplayPaused && !document.hidden) {
+            goNext();
+          }
+        }, 4200);
+      };
+
+      const pauseAutoplay = () => {
+        autoplayPaused = true;
+      };
+
+      const resumeAutoplay = () => {
+        window.setTimeout(() => {
+          autoplayPaused = false;
+        }, 1200);
+      };
 
       gallery.addEventListener("mousedown", (event) => {
         isDown = true;
+        pauseAutoplay();
         gallery.classList.add("is-dragging");
         startX = event.pageX - gallery.offsetLeft;
         scrollLeft = gallery.scrollLeft;
@@ -280,11 +330,13 @@
       gallery.addEventListener("mouseleave", () => {
         isDown = false;
         gallery.classList.remove("is-dragging");
+        resumeAutoplay();
       });
 
       gallery.addEventListener("mouseup", () => {
         isDown = false;
         gallery.classList.remove("is-dragging");
+        resumeAutoplay();
       });
 
       gallery.addEventListener("mousemove", (event) => {
@@ -295,19 +347,30 @@
         gallery.scrollLeft = scrollLeft - walk;
       });
 
-      const card = gallery.closest(".gallery-card");
+      gallery.addEventListener("touchstart", pauseAutoplay, { passive: true });
+      gallery.addEventListener("touchend", resumeAutoplay, { passive: true });
+
+      card?.addEventListener("mouseenter", pauseAutoplay);
+      card?.addEventListener("mouseleave", resumeAutoplay);
+
       if (card) {
         const prev = card.querySelector(".gallery-prev");
         const next = card.querySelector(".gallery-next");
 
         prev?.addEventListener("click", () => {
-          gallery.scrollBy({ left: -getSlideWidth(), behavior: "smooth" });
+          pauseAutoplay();
+          goPrev();
+          resumeAutoplay();
         });
 
         next?.addEventListener("click", () => {
-          gallery.scrollBy({ left: getSlideWidth(), behavior: "smooth" });
+          pauseAutoplay();
+          goNext();
+          resumeAutoplay();
         });
       }
+
+      startAutoplay();
     });
   </script>
 
