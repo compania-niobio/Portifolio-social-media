@@ -4,37 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
+  <meta name="description" content="Página não encontrada no portfólio de Isadora Rezende." />
   <title>Erro 404 | Isadora Rezende</title>
   <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <script>
+    (function () {
+      const hour = new Date().getHours();
+      const isDay = hour >= 6 && hour < 18;
+      document.documentElement.classList.add(isDay ? "tema-dia" : "tema-noite");
+      document.documentElement.dataset.theme = isDay ? "dia" : "noite";
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
-
-<body class="erro">
+<body class="erro erro-luxo page-404">
   <div class="page-transition" aria-hidden="true"></div>
 
-  <main class="erro-content">
-    <h1>404</h1>
-    <p>Página não encontrada</p>
-    <div class="links-luxo">
-      <a href="index.html">Voltar para o início</a>
+  <main class="erro-hero" aria-labelledby="erro-title">
+    <div class="erro-bg-items" aria-hidden="true">
+      <img class="erro-float erro-phone" src="assets/imagens/instagram_600x600.png" srcset="assets/imagens/instagram_300x300.png 300w, assets/imagens/instagram_600x600.png 600w, assets/imagens/instagram_1200x1200.png 1200w" alt="" />
+      <img class="erro-float erro-luz" src="assets/imagens/luz_600.png" srcset="assets/imagens/luz_300.png 300w, assets/imagens/luz_600.png 600w, assets/imagens/luz_1200.png 1200w" alt="" />
+      <img class="erro-float erro-case" src="assets/imagens/gravador_atras_600.png" srcset="assets/imagens/gravador_atras_300.png 300w, assets/imagens/gravador_atras_600.png 600w, assets/imagens/gravador_atras_1200.png 1200w" alt="" />
+      <img class="erro-float erro-mic" src="assets/imagens/conectar_600.png" srcset="assets/imagens/conectar_300.png 300w, assets/imagens/conectar_600.png 600w, assets/imagens/conectar_1200.png 1200w" alt="" />
     </div>
-    <img
-      class="img-responsiva logo-img"
-      src="assets/imagens/logo_300x300.png"
-      srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
-      sizes="(max-width: 600px) 160px, 220px"
-      alt="Logo Isadora Rezende"
-      width="300"
-      height="300"
-    />
+
+    <section class="erro-card-premium">
+      <span class="erro-kicker">Página fora do feed</span>
+
+      <div class="erro-number-wrap" aria-hidden="true">
+        <span class="erro-number">4</span>
+        <div class="erro-logo-orbit">
+          <span class="orbit-ring"></span>
+          <img class="js-logo-theme" src="assets/imagens/logo_300x300.png" srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w" alt="" width="300" height="300" />
+        </div>
+        <span class="erro-number">4</span>
+      </div>
+
+      <h1 id="erro-title">Essa página saiu do enquadramento.</h1>
+
+      <p>O link não foi encontrado, mas a experiência continua: escolha um caminho e volte para o portfólio da Isadora.</p>
+
+      <div class="erro-actions" aria-label="Ações principais">
+        <a class="btn erro-btn-primary" href="index.html">Voltar ao início</a>
+        <a class="erro-btn-secondary" href="projetos.html">Ver projetos</a>
+        <a class="erro-btn-secondary" href="contato.html">Falar comigo</a>
+      </div>
+
+      <div class="erro-tags" aria-label="Especialidades">
+        <span>Social Media</span>
+        <span>Videomaker</span>
+        <span>Storymaker</span>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer erro-footer">
     <p class="footer-bottom">© 2026 Isadora Rezende. Todos os direitos reservados.</p>
   </footer>
 
   <div class="loader" aria-hidden="true">
-    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
+    <img class="js-logo-theme" src="assets/imagens/logo_white_300x300.png" alt="" width="300" height="300" />
   </div>
 
   <script type="module" src="js/main.js"></script>

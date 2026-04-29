@@ -6,7 +6,12 @@ export function initPageTransition() {
     const url = link.getAttribute("href");
     const target = link.getAttribute("target");
 
-    const isExternal = url?.startsWith("http") || url?.startsWith("mailto:") || url?.startsWith("tel:") || url?.startsWith("https://wa.me");
+    const isExternal =
+      url?.startsWith("http") ||
+      url?.startsWith("mailto:") ||
+      url?.startsWith("tel:") ||
+      url?.startsWith("https://wa.me");
+
     const isAnchor = url?.startsWith("#");
     const shouldIgnore = !url || isExternal || isAnchor || target === "_blank";
 

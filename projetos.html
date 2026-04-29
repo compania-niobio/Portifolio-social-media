@@ -3,56 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <meta name="description" content="Projetos de social media, fotos profissionais, logotipos, posts e campanhas de Isadora Rezende." />
   <title>Projetos | Isadora Rezende</title>
   <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <script>
+    (function () {
+      const hour = new Date().getHours();
+      const isDay = hour >= 6 && hour < 18;
+      document.documentElement.classList.add(isDay ? "tema-dia" : "tema-noite");
+      document.documentElement.dataset.theme = isDay ? "dia" : "noite";
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
-
-<body>
+<body class="page-projetos">
   <div class="page-transition" aria-hidden="true"></div>
 
   <header class="site-header site-header-nav">
     <nav class="top-nav" aria-label="Navegação principal">
-      <a class="top-link" href="index.html">Início</a>
-      <a class="top-link" href="perfil.html">Perfil</a>
+      <a class="top-link " href="index.html">Início</a>
+      <a class="top-link " href="perfil.html">Perfil</a>
 
       <a class="brand" href="index.html" aria-label="Ir para o início">
         <img
-          class="img-responsiva logo-img"
+          class="img-responsiva logo-img js-logo-theme"
           src="assets/imagens/logo_300x300.png"
           srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
-          sizes="(max-width: 600px) 90px, 130px"
+          sizes="(max-width: 600px) 84px, 120px"
           alt="Logo Isadora Rezende"
           width="300"
           height="300"
         />
       </a>
 
-      <a class="top-link" href="projetos.html">Projetos</a>
-      <a class="top-link top-link-contact" href="contato.html">Contato</a>
+      <a class="top-link is-active" href="projetos.html" aria-current="page">Projetos</a>
+      <a class="top-link top-link-contact " href="contato.html">Contato</a>
     </nav>
   </header>
 
   <main>
     <section class="projetos">
       <div class="projects-header">
+        <span class="section-kicker">Portfólio</span>
         <h1>Projetos</h1>
-        <p>Trabalhos organizados por categoria para o site não quebrar e as imagens manterem proporção.</p>
+        <p>Trabalhos organizados por categoria, mantendo proporção, leitura e experiência premium em qualquer tela.</p>
       </div>
 
       <div class="projects-grid">
         <article class="project-card pessoas">
-          <img
-            src="assets/post/foto-perso_600.png"
-            srcset="assets/post/foto-perso_300.png 300w, assets/post/foto-perso_600.png 600w"
-            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-            alt="Fotos profissionais para redes sociais"
-            width="600"
-            height="600"
-            loading="lazy"
-          />
+          <img src="assets/post/foto-perso_600.png" srcset="assets/post/foto-perso_300.png 300w, assets/post/foto-perso_600.png 600w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Fotos profissionais para redes sociais" width="600" height="600" loading="lazy" />
           <div class="project-info">
             <span>Pessoas</span>
             <h3>Fotos Profissionais</h3>
@@ -61,15 +62,7 @@
         </article>
 
         <article class="project-card comidas">
-          <img
-            src="assets/post/ifood_600.png"
-            srcset="assets/post/ifood_300.png 300w, assets/post/ifood_600.png 600w, assets/post/ifood_1200.png 1200w"
-            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-            alt="Fotografia de comida para delivery"
-            width="600"
-            height="600"
-            loading="lazy"
-          />
+          <img src="assets/post/ifood_600.png" srcset="assets/post/ifood_300.png 300w, assets/post/ifood_600.png 600w, assets/post/ifood_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Fotografia de comida para delivery" width="600" height="600" loading="lazy" />
           <div class="project-info">
             <span>Comidas</span>
             <h3>Fotografia de Produto</h3>
@@ -79,37 +72,16 @@
 
         <article class="project-card logotipo logo-gallery-card gallery-card autoplay-gallery-card">
           <button class="gallery-arrow gallery-prev" type="button" aria-label="Logotipo anterior">‹</button>
-
           <div class="logo-gallery" aria-label="Galeria de logotipos">
             <figure class="logo-slide">
-              <img
-                src="assets/post/logo-tipo_600.png"
-                srcset="assets/post/logo-tipo_300.png 300w, assets/post/logo-tipo_600.png 600w, assets/post/logo-tipo_1200.png 1200w"
-                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                alt="Logotipo Agatha Santos"
-                width="600"
-                height="600"
-                loading="lazy"
-              />
+              <img src="assets/post/logo-tipo_600.png" srcset="assets/post/logo-tipo_300.png 300w, assets/post/logo-tipo_600.png 600w, assets/post/logo-tipo_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Logotipo Agatha Santos" width="600" height="600" loading="lazy" />
             </figure>
-
             <figure class="logo-slide">
-              <img
-                src="assets/post/natalia_600.png"
-                srcset="assets/post/natalia_300.png 300w, assets/post/natalia_600.png 600w, assets/post/natalia_1200.png 1200w"
-                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                alt="Logotipo Nathalia Cipolla Nail Designer"
-                width="600"
-                height="600"
-                loading="lazy"
-              />
+              <img src="assets/post/natalia_600.png" srcset="assets/post/natalia_300.png 300w, assets/post/natalia_600.png 600w, assets/post/natalia_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Logotipo Nathalia Cipolla Nail Designer" width="600" height="600" loading="lazy" />
             </figure>
           </div>
-
           <button class="gallery-arrow gallery-next" type="button" aria-label="Próximo logotipo">›</button>
-
-          <div class="gallery-hint" aria-hidden="true">Arraste para o lado</div>
-
+          <div class="gallery-hint" aria-hidden="true">Arraste</div>
           <div class="project-info">
             <span>Logotipo</span>
             <h3>Logo & Branding</h3>
@@ -117,40 +89,18 @@
           </div>
         </article>
 
-
-        <article class="project-card casamento gallery-card">
+        <article class="project-card casamento gallery-card autoplay-gallery-card">
           <button class="gallery-arrow gallery-prev" type="button" aria-label="Imagem anterior">‹</button>
-
           <div class="project-gallery casamento-gallery" aria-label="Galeria de casamento">
             <figure class="gallery-slide">
-              <img
-                src="assets/post/alianca_600.png"
-                srcset="assets/post/alianca_300.png 300w, assets/post/alianca_600.png 600w, assets/post/alianca_1200.png 1200w"
-                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                alt="Detalhe de alianças em porta-alianças personalizado"
-                width="600"
-                height="600"
-                loading="lazy"
-              />
+              <img src="assets/post/alianca_600.png" srcset="assets/post/alianca_300.png 300w, assets/post/alianca_600.png 600w, assets/post/alianca_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Detalhe de alianças em porta-alianças personalizado" width="600" height="600" loading="lazy" />
             </figure>
-
             <figure class="gallery-slide">
-              <img
-                src="assets/post/perso-casamento_600.png"
-                srcset="assets/post/perso-casamento_300.png 300w, assets/post/perso-casamento_600.png 600w, assets/post/perso-casamento_1200.png 1200w"
-                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                alt="Cerimônia de casamento ao ar livre"
-                width="600"
-                height="800"
-                loading="lazy"
-              />
+              <img src="assets/post/perso-casamento_600.png" srcset="assets/post/perso-casamento_300.png 300w, assets/post/perso-casamento_600.png 600w, assets/post/perso-casamento_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Cerimônia de casamento ao ar livre" width="600" height="800" loading="lazy" />
             </figure>
           </div>
-
           <button class="gallery-arrow gallery-next" type="button" aria-label="Próxima imagem">›</button>
-
-          <div class="gallery-hint" aria-hidden="true">Arraste para o lado</div>
-
+          <div class="gallery-hint" aria-hidden="true">Arraste</div>
           <div class="project-info">
             <span>Casamento</span>
             <h3>Momentos Especiais</h3>
@@ -159,15 +109,7 @@
         </article>
 
         <article class="project-card eventos">
-          <img
-            src="assets/post/postagem_600.png"
-            srcset="assets/post/postagem_300.png 300w, assets/post/postagem_600.png 600w, assets/post/postagem_1200.png 1200w"
-            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-            alt="Post comemorativo e campanha para redes sociais"
-            width="600"
-            height="600"
-            loading="lazy"
-          />
+          <img src="assets/post/postagem_600.png" srcset="assets/post/postagem_300.png 300w, assets/post/postagem_600.png 600w, assets/post/postagem_1200.png 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw" alt="Post comemorativo e campanha para redes sociais" width="600" height="600" loading="lazy" />
           <div class="project-info">
             <span>Eventos</span>
             <h3>Posts & Campanhas</h3>
@@ -211,14 +153,23 @@
         <canvas id="graficoLinha"></canvas>
       </div>
     </section>
-</main>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
+        <img
+          class="js-logo-theme"
+          src="assets/imagens/logo_300x300.png"
+          srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+          alt="Logo Isadora Rezende"
+          width="300"
+          height="300"
+          loading="lazy"
+        />
         <p>Social Media • Videomaker • Storymaker</p>
       </div>
+
       <div class="footer-contact">
         <p>Marília - SP</p>
         <p>@socialmedia_isadora</p>
@@ -229,152 +180,11 @@
   </footer>
 
   <div class="loader" aria-hidden="true">
-    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
+    <img class="js-logo-theme" src="assets/imagens/logo_white_300x300.png" alt="" width="300" height="300" />
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const semGestao = 3876;
-    const comGestao = 13086;
-    const chartCanvas = document.getElementById("graficoLinha");
-
-    if (chartCanvas && typeof Chart !== "undefined") {
-      new Chart(chartCanvas, {
-        type: "line",
-        data: {
-          labels: ["Sem gestão", "Início", "Com gestão"],
-          datasets: [{
-            data: [semGestao, 7600, comGestao],
-            borderColor: "#d6b56d",
-            backgroundColor: "rgba(214,181,109,.15)",
-            pointBackgroundColor: "#d6b56d",
-            pointBorderColor: "#d6b56d",
-            pointRadius: 4,
-            borderWidth: 3,
-            fill: true,
-            tension: .42
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { grid: { display: false } },
-            y: { beginAtZero: true, ticks: { callback: value => Number(value).toLocaleString("pt-BR") } }
-          }
-        }
-      });
-    }
-  </script>
-
-  <script>
-    document.querySelectorAll(".project-gallery, .logo-gallery").forEach((gallery) => {
-      let isDown = false;
-      let startX = 0;
-      let scrollLeft = 0;
-      let autoplayTimer = null;
-      let autoplayPaused = false;
-
-      const getSlideWidth = () => gallery.querySelector("figure")?.offsetWidth || gallery.clientWidth;
-      const slides = Array.from(gallery.querySelectorAll("figure"));
-      const card = gallery.closest(".gallery-card");
-
-      const goNext = () => {
-        const slideWidth = getSlideWidth();
-        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-        const isLast = gallery.scrollLeft >= maxScroll - 10;
-
-        gallery.scrollTo({
-          left: isLast ? 0 : gallery.scrollLeft + slideWidth,
-          behavior: "smooth"
-        });
-      };
-
-      const goPrev = () => {
-        const slideWidth = getSlideWidth();
-        const isFirst = gallery.scrollLeft <= 10;
-
-        gallery.scrollTo({
-          left: isFirst ? gallery.scrollWidth : gallery.scrollLeft - slideWidth,
-          behavior: "smooth"
-        });
-      };
-
-      const startAutoplay = () => {
-        if (slides.length <= 1 || autoplayTimer) return;
-
-        autoplayTimer = window.setInterval(() => {
-          if (!autoplayPaused && !document.hidden) {
-            goNext();
-          }
-        }, 4200);
-      };
-
-      const pauseAutoplay = () => {
-        autoplayPaused = true;
-      };
-
-      const resumeAutoplay = () => {
-        window.setTimeout(() => {
-          autoplayPaused = false;
-        }, 1200);
-      };
-
-      gallery.addEventListener("mousedown", (event) => {
-        isDown = true;
-        pauseAutoplay();
-        gallery.classList.add("is-dragging");
-        startX = event.pageX - gallery.offsetLeft;
-        scrollLeft = gallery.scrollLeft;
-      });
-
-      gallery.addEventListener("mouseleave", () => {
-        isDown = false;
-        gallery.classList.remove("is-dragging");
-        resumeAutoplay();
-      });
-
-      gallery.addEventListener("mouseup", () => {
-        isDown = false;
-        gallery.classList.remove("is-dragging");
-        resumeAutoplay();
-      });
-
-      gallery.addEventListener("mousemove", (event) => {
-        if (!isDown) return;
-        event.preventDefault();
-        const x = event.pageX - gallery.offsetLeft;
-        const walk = (x - startX) * 1.4;
-        gallery.scrollLeft = scrollLeft - walk;
-      });
-
-      gallery.addEventListener("touchstart", pauseAutoplay, { passive: true });
-      gallery.addEventListener("touchend", resumeAutoplay, { passive: true });
-
-      card?.addEventListener("mouseenter", pauseAutoplay);
-      card?.addEventListener("mouseleave", resumeAutoplay);
-
-      if (card) {
-        const prev = card.querySelector(".gallery-prev");
-        const next = card.querySelector(".gallery-next");
-
-        prev?.addEventListener("click", () => {
-          pauseAutoplay();
-          goPrev();
-          resumeAutoplay();
-        });
-
-        next?.addEventListener("click", () => {
-          pauseAutoplay();
-          goNext();
-          resumeAutoplay();
-        });
-      }
-
-      startAutoplay();
-    });
-  </script>
-
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

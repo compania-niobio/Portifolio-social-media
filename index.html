@@ -3,35 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <meta name="description" content="Portfólio profissional de Isadora Rezende: social media, videomaker e storymaker." />
   <title>Portfólio | Isadora Rezende</title>
   <link rel="shortcut icon" href="assets/icons/favicon-white.ico" type="image/x-icon" />
+  <script>
+    (function () {
+      const hour = new Date().getHours();
+      const isDay = hour >= 6 && hour < 18;
+      document.documentElement.classList.add(isDay ? "tema-dia" : "tema-noite");
+      document.documentElement.dataset.theme = isDay ? "dia" : "noite";
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
-
-<body>
+<body class="page-index">
   <div class="page-transition" aria-hidden="true"></div>
 
   <header class="site-header site-header-nav">
     <nav class="top-nav" aria-label="Navegação principal">
-      <a class="top-link" href="index.html">Início</a>
-      <a class="top-link" href="perfil.html">Perfil</a>
+      <a class="top-link is-active" href="index.html" aria-current="page">Início</a>
+      <a class="top-link " href="perfil.html">Perfil</a>
 
       <a class="brand" href="index.html" aria-label="Ir para o início">
         <img
-          class="img-responsiva logo-img"
+          class="img-responsiva logo-img js-logo-theme"
           src="assets/imagens/logo_300x300.png"
           srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
-          sizes="(max-width: 600px) 90px, 130px"
+          sizes="(max-width: 600px) 84px, 120px"
           alt="Logo Isadora Rezende"
           width="300"
           height="300"
         />
       </a>
 
-      <a class="top-link" href="projetos.html">Projetos</a>
-      <a class="top-link top-link-contact" href="contato.html">Contato</a>
+      <a class="top-link " href="projetos.html">Projetos</a>
+      <a class="top-link top-link-contact " href="contato.html">Contato</a>
     </nav>
   </header>
 
@@ -57,7 +65,15 @@
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <img src="assets/imagens/logo_300x300.png" alt="Logo Isadora Rezende" width="300" height="300" loading="lazy" />
+        <img
+          class="js-logo-theme"
+          src="assets/imagens/logo_300x300.png"
+          srcset="assets/imagens/logo_300x300.png 300w, assets/imagens/logo_600x600.png 600w, assets/imagens/logo_1200x1200.png 1200w"
+          alt="Logo Isadora Rezende"
+          width="300"
+          height="300"
+          loading="lazy"
+        />
         <p>Social Media • Videomaker • Storymaker</p>
       </div>
 
@@ -71,7 +87,7 @@
   </footer>
 
   <div class="loader" aria-hidden="true">
-    <img src="assets/imagens/logo_300x300.png" alt="" width="300" height="300" />
+    <img class="js-logo-theme" src="assets/imagens/logo_white_300x300.png" alt="" width="300" height="300" />
   </div>
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
