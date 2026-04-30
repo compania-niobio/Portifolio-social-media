@@ -551,3 +551,225 @@ html[data-viewport-tier="compact"] .citacao h1 {
     gap: 34px;
   }
 }
+/* =========================================================
+   FIX DEFINITIVO HERO-CONTENT — NÃO QUEBRAR EM CELULAR/TABLET
+   Este bloco fica NO FINAL do responsive.css para sobrescrever os anteriores.
+   ========================================================= */
+
+/* Caixa central segura: serve para hero antigo e hero novo */
+.hero-content,
+.hero-floating .hero-content,
+.hero-index-luxo .hero-content {
+  box-sizing: border-box !important;
+  width: min(calc(100% - 28px), 760px) !important;
+  max-width: 760px !important;
+  min-width: 0 !important;
+  margin-inline: auto !important;
+  padding: clamp(26px, 5vw, 54px) clamp(18px, 5vw, 56px) !important;
+  overflow: hidden !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  text-wrap: balance;
+}
+
+/* Título seguro */
+.hero h1,
+.hero-floating h1,
+.hero-index-luxo h1 {
+  max-width: 100% !important;
+  font-size: clamp(3rem, 11vw, 8rem) !important;
+  line-height: .9 !important;
+  letter-spacing: clamp(1px, .7vw, 10px) !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  text-wrap: balance;
+}
+
+/* Texto seguro */
+.hero p,
+.hero-floating p,
+.hero-index-luxo p {
+  max-width: min(100%, 620px) !important;
+  margin-inline: auto !important;
+  font-size: clamp(.95rem, 1.4vw, 1.2rem) !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+/* Botão nunca estoura a caixa */
+.hero .btn,
+.hero-floating .btn,
+.hero-index-luxo .btn {
+  width: fit-content !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  text-align: center !important;
+}
+
+/* Imagens do hero ficam decorativas e não competem com o texto */
+.hero-floating .float-item,
+.hero-index-luxo .float-item {
+  z-index: 1 !important;
+}
+
+.hero-floating .hero-content,
+.hero-index-luxo .hero-content {
+  z-index: 30 !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-content,
+  .hero-floating .hero-content,
+  .hero-index-luxo .hero-content {
+    width: min(calc(100% - 36px), 680px) !important;
+    max-width: 680px !important;
+  }
+
+  .hero h1,
+  .hero-floating h1,
+  .hero-index-luxo h1 {
+    font-size: clamp(3rem, 12vw, 7rem) !important;
+  }
+}
+
+/* Celular */
+@media (max-width: 650px) {
+  .hero,
+  .hero-floating,
+  .hero-index-luxo {
+    min-height: 100svh !important;
+    padding-top: max(112px, calc(env(safe-area-inset-top) + 94px)) !important;
+    padding-inline: 14px !important;
+    padding-bottom: 82px !important;
+  }
+
+  .hero-content,
+  .hero-floating .hero-content,
+  .hero-index-luxo .hero-content {
+    width: min(calc(100% - 24px), 360px) !important;
+    max-width: 360px !important;
+    padding: 26px 16px !important;
+    border-radius: 28px !important;
+  }
+
+  .hero h1,
+  .hero-floating h1,
+  .hero-index-luxo h1 {
+    font-size: clamp(2.85rem, 16vw, 4.7rem) !important;
+    letter-spacing: clamp(.5px, .6vw, 2px) !important;
+  }
+
+  .hero p,
+  .hero-floating p,
+  .hero-index-luxo p {
+    max-width: 292px !important;
+    font-size: .95rem !important;
+    line-height: 1.58 !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero .btn,
+  .hero-floating .btn,
+  .hero-index-luxo .btn {
+    width: min(100%, 276px) !important;
+    min-height: 50px !important;
+    padding-inline: 18px !important;
+    font-size: 11px !important;
+    letter-spacing: 1.4px !important;
+  }
+
+  .hero-floating .float-item,
+  .hero-index-luxo .float-item {
+    opacity: .24 !important;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 380px) {
+  .hero-content,
+  .hero-floating .hero-content,
+  .hero-index-luxo .hero-content {
+    width: min(calc(100% - 20px), 318px) !important;
+    max-width: 318px !important;
+    padding: 24px 14px !important;
+  }
+
+  .hero h1,
+  .hero-floating h1,
+  .hero-index-luxo h1 {
+    font-size: clamp(2.55rem, 15vw, 3.8rem) !important;
+  }
+
+  .hero p,
+  .hero-floating p,
+  .hero-index-luxo p {
+    max-width: 260px !important;
+    font-size: .9rem !important;
+  }
+}
+
+/* Celular deitado */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero,
+  .hero-floating,
+  .hero-index-luxo {
+    min-height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .hero-content,
+  .hero-floating .hero-content,
+  .hero-index-luxo .hero-content {
+    width: min(calc(100% - 32px), 620px) !important;
+    max-width: 620px !important;
+    padding-block: 22px !important;
+  }
+
+  .hero h1,
+  .hero-floating h1,
+  .hero-index-luxo h1 {
+    font-size: clamp(2.8rem, 10vw, 4.8rem) !important;
+  }
+
+  .hero p,
+  .hero-floating p,
+  .hero-index-luxo p {
+    max-width: 520px !important;
+  }
+}
+
+/* Ajustes específicos por detecção de dispositivo */
+html[data-device-model*="iphone-15"] .hero-content,
+html[data-device-model*="iphone-15"] .hero-floating .hero-content,
+html[data-device-model*="iphone-15"] .hero-index-luxo .hero-content,
+html[data-device-model*="samsung-galaxy-s25"] .hero-content,
+html[data-device-model*="samsung-galaxy-s25"] .hero-floating .hero-content,
+html[data-device-model*="samsung-galaxy-s25"] .hero-index-luxo .hero-content {
+  width: min(calc(100% - 24px), 360px) !important;
+  max-width: 360px !important;
+}
+
+html[data-device-model*="pro-max"] .hero-content,
+html[data-device-model*="pro-max"] .hero-floating .hero-content,
+html[data-device-model*="pro-max"] .hero-index-luxo .hero-content,
+html[data-device-model*="plus"] .hero-content,
+html[data-device-model*="plus"] .hero-floating .hero-content,
+html[data-device-model*="plus"] .hero-index-luxo .hero-content,
+html[data-device-model*="s25-ultra"] .hero-content,
+html[data-device-model*="s25-ultra"] .hero-floating .hero-content,
+html[data-device-model*="s25-ultra"] .hero-index-luxo .hero-content {
+  width: min(calc(100% - 24px), 380px) !important;
+  max-width: 380px !important;
+}
+
+html[data-viewport-tier="compact"] .hero-content,
+html[data-viewport-tier="compact"] .hero-floating .hero-content,
+html[data-viewport-tier="compact"] .hero-index-luxo .hero-content {
+  width: min(calc(100% - 20px), 304px) !important;
+  max-width: 304px !important;
+  padding-inline: 14px !important;
+}
