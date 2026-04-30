@@ -1,775 +1,796 @@
-/* css/responsive.css - ajustes responsivos limpos, sem quebrar imagens */
-
-@media (max-width:1180px){
-  :root{
-    --container:min(960px,calc(100% - 36px));
-  }
-
-  .projects-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media (max-width:1024px){
-  .perfil-apresentacao,
-  .perfil,
-  .contato-luxo{
-    min-height:auto;
-    grid-template-columns:1fr;
-    text-align:center;
-    padding-top:clamp(110px,14vw,140px);
-  }
-
-  .perfil-texto,
-  .citacao{
-    margin-inline:auto;
-  }
-
-  .perfil-texto p{
-    text-align:center;
-  }
-
-  .perfil-foto img,
-  .pessoa-img,
-  #pessoa{
-    width:min(82vw,560px);
-    max-width:100%;
-    transform:translateY(18px) scale(1);
-  }
-
-  .links-luxo{
-    align-items:center;
-    margin-inline:auto;
-  }
-
-  .footer-content{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .footer-brand img,
-  footer img,
-  .logo-contato{
-    margin-inline:auto;
-  }
-
-  .footer-links,
-  .footer-contact{
-    align-items:center;
-  }
-}
-
-@media (max-width:900px){
-  :root{
-    --container:min(760px,calc(100% - 32px));
-  }
-
-  section{
-    padding-block:86px;
-  }
-
-  .hero{
-    min-height:100svh;
-    padding:118px 18px 70px;
-  }
-
-  .phone{
-    width:clamp(140px,34vw,220px);
-    opacity:.48;
-  }
-
-  .phone.left{
-    left:max(-96px,-18vw);
-    bottom:92px;
-  }
-
-  .phone.right{
-    right:max(-96px,-18vw);
-    top:96px;
-  }
-
-  .numbers-grid{
-    grid-template-columns:1fr;
-  }
-
-  .number-card{
-    min-height:220px;
-    text-align:center;
-    align-items:center;
-  }
-
-  .number-card.destaque{
-    transform:none;
-  }
-}
-
-@media (max-width:650px){
-  :root{
-    --container:min(520px,calc(100% - 28px));
-    --header-size:68px;
-  }
-
-  section{
-    padding-block:74px;
-  }
-
-  .hero{
-    min-height:100svh;
-    padding:112px 16px 62px;
-  }
-
-  .hero-content{
-    width:min(100%,330px);
-  }
-
-  .hero h1{
-    font-size:clamp(3rem,17vw,5.2rem);
-    letter-spacing:clamp(1px,.7vw,4px);
-  }
-
-  .hero p{
-    max-width:300px;
-    margin-bottom:30px;
-  }
-
-  .btn{
-    width:min(100%,290px);
-    padding-inline:20px;
-  }
-
-  .phone{
-    width:clamp(118px,42vw,190px);
-    max-width:none;
-    opacity:.30;
-  }
-
-  .phone.left{
-    left:-86px;
-    bottom:112px;
-  }
-
-  .phone.right{
-    right:-86px;
-    top:116px;
-  }
-
-  .perfil-apresentacao,
-  .perfil,
-  .contato-luxo{
-    width:var(--container);
-    padding-top:100px;
-    gap:30px;
-  }
-
-  .perfil-foto img,
-  .pessoa-img,
-  #pessoa{
-    width:min(100%,420px);
-    transform:translateY(12px) scale(1);
-  }
-
-  .perfil-texto h1,
-  .projetos h1,
-  .results-header h2{
-    font-size:clamp(2.75rem,13vw,4.7rem);
-    letter-spacing:-1px;
-  }
-
-  .perfil-texto h2{
-    font-size:clamp(1.8rem,9vw,2.6rem);
-  }
-
-  .perfil-texto p{
-    font-size:1rem;
-    line-height:1.65;
-  }
-
-  .citacao h1{
-    font-size:clamp(2.45rem,12vw,4.8rem);
-  }
-
-  .projects-grid{
-    grid-template-columns:1fr;
-  }
-
-  .project-card{
-    border-radius:26px;
-  }
-
-  .project-card img{
-    aspect-ratio:auto;
-    width:100%;
-    height:auto;
-    max-height:none;
-    object-fit:contain;
-    background:var(--cor-card);
-  }
-
-  .project-info{
-    position:relative;
-    background:var(--cor-card);
-    color:var(--cor-texto);
-    padding:22px;
-  }
-
-  .project-info h3{
-    color:var(--cor-texto);
-  }
-
-  .project-info p{
-    color:var(--cor-muted);
-  }
-
-  .project-card.logotipo img{
-    padding:28px;
-  }
-
-  .linha-evolucao{
-    height:260px;
-  }
-
-  .links-luxo a{
-    font-size:clamp(1.25rem,6vw,1.8rem);
-  }
-}
-
-@media (max-width:430px){
-  :root{
-    --container:calc(100% - 24px);
-  }
-
-  .hero{
-    padding-top:106px;
-  }
-
-  .hero h1{
-    font-size:clamp(2.8rem,18vw,4.3rem);
-  }
-
-  .phone{
-    opacity:.26;
-  }
-
-  .phone.left{
-    left:-100px;
-    bottom:120px;
-  }
-
-  .phone.right{
-    right:-100px;
-    top:122px;
-  }
-
-  .project-info,
-  .number-card{
-    padding:20px;
-  }
-
-  .footer-bottom{
-    font-size:.82rem;
-  }
-}
-
 /* =========================================================
-   FIX RESPONSIVO FINAL: IMAGENS NÃO INVADEM TEXTO/BOTÃO
+   css/responsive.css
+   BASE ESTÁVEL — SEM BLOCOS REPETIDOS
+
+   Breakpoints oficiais:
+   1180px / 900px / 650px / 430px
+
+   Objetivo:
+   - Estabilizar o site.
+   - Remover regras antigas/repetidas.
+   - Perfil com um único sistema:
+     .perfil-card-modelo / .perfil-foto-card / .perfil-info-card
+   - .hero-content e .perfil-info-card com a mesma lógica de card.
+   - iPhone/Samsung apenas para safe-area, nunca para largura de card.
    ========================================================= */
-@media (max-width:1024px){
-  .hero-floating{padding-top:124px;}
-  .hero-floating .hero-content{width:min(680px,calc(100% - 36px));}
-  .float-item{opacity:.48;}
-  .perfil-card-modelo{width:min(760px,calc(100% - 36px));grid-template-columns:1fr;text-align:center;}
-  .perfil-info-card{text-align:center;}
-  .perfil-foto-card img,.perfil-card-modelo #pessoa{width:min(82vw,520px)!important;}
-}
 
-@media (max-width:650px){
-  .hero-floating{padding:118px 14px 94px;min-height:100svh;}
-  .hero-floating .hero-content{width:min(100%,340px);padding:28px 18px;border-radius:30px;}
-  .hero-floating h1{font-size:clamp(3rem,17vw,5.1rem);letter-spacing:2px;}
-  .hero-floating p{max-width:290px;font-size:.96rem;line-height:1.6;}
-  .hero-floating .btn,.perfil-cta{width:min(100%,280px);}
-  .float-item{opacity:.28;filter:drop-shadow(0 18px 28px rgba(0,0,0,.26));}
-  .item-instagram{width:44vw;opacity:.22;}
-  .item-case{width:48vw;opacity:.26;}
-  .item-luz{width:36vw;opacity:.25;}
-  .item-conectar,.item-gravador{width:40vw;}
-  .hero-bg-items .float-item:nth-child(1){--x:10%;--y:75%;}
-  .hero-bg-items .float-item:nth-child(2){--x:90%;--y:24%;}
-  .hero-bg-items .float-item:nth-child(3){--x:11%;--y:22%;}
-  .hero-bg-items .float-item:nth-child(4){--x:91%;--y:78%;}
-  .hero-bg-items .float-item:nth-child(5){--x:50%;--y:91%;}
-  .perfil-card-modelo{width:min(100% - 28px,520px);padding-top:112px;gap:18px;}
-  .perfil-foto-card img,.perfil-card-modelo #pessoa{width:min(100%,390px)!important;}
-  .perfil-info-card{padding:26px 18px;border-radius:30px;}
-  .perfil-info-card h1{font-size:clamp(2.75rem,15vw,4.7rem);letter-spacing:2px;}
-  .perfil-info-card h1 strong{font-size:.44em;letter-spacing:.12em;}
-  .perfil-fatos p{font-size:.96rem;}
-}
 
-@media (max-width:430px){
-  .hero-floating .hero-content,.perfil-info-card{width:min(100%,315px);padding:26px 16px;}
-  .hero-floating h1,.perfil-info-card h1{font-size:clamp(2.7rem,18vw,4.4rem);}
-  .float-item{opacity:.22;}
-}
 /* =========================================================
-   SUPER RESPONSIVO + DETECÇÃO DE DISPOSITIVO
-   Depende das classes geradas pelo js/modules/device.js
+   1. BASE GLOBAL DE SEGURANÇA
    ========================================================= */
 
 html,
 body {
+  width: 100%;
   max-width: 100%;
   overflow-x: hidden !important;
 }
 
 body {
   min-height: 100dvh;
-}
-
-.device-mobile body,
-.device-tablet body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overscroll-behavior-x: none;
 }
 
-.device-mobile .site-header.site-header-nav {
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+.hero,
+.hero-floating,
+.hero-index-luxo,
+.perfil-card-modelo,
+.contato-luxo,
+.projetos,
+.resultados,
+.site-footer,
+.erro-hero {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   2. SAFE AREA — IPHONE/SAMSUNG SOMENTE PARA NOTCH/BARRA
+   Não altera largura do card.
+   ========================================================= */
+
+.device-mobile .site-header.site-header-nav,
+html[data-device-model*="iphone"] .site-header.site-header-nav,
+html[data-device-model*="samsung"] .site-header.site-header-nav {
   top: max(8px, env(safe-area-inset-top));
 }
 
+.device-mobile .hero,
+.device-mobile .hero-floating,
+.device-mobile .hero-index-luxo,
+html[data-device-model*="iphone"] .hero,
+html[data-device-model*="iphone"] .hero-floating,
+html[data-device-model*="iphone"] .hero-index-luxo,
+html[data-device-model*="samsung"] .hero,
+html[data-device-model*="samsung"] .hero-floating,
+html[data-device-model*="samsung"] .hero-index-luxo {
+  padding-top: max(112px, calc(env(safe-area-inset-top) + 92px));
+}
+
 .device-mobile .site-footer,
-.device-mobile .erro-footer {
+.device-mobile .erro-footer,
+html[data-device-model*="iphone"] .site-footer,
+html[data-device-model*="iphone"] .erro-footer,
+html[data-device-model*="samsung"] .site-footer,
+html[data-device-model*="samsung"] .erro-footer {
   padding-bottom: max(28px, env(safe-area-inset-bottom));
 }
 
-.device-mobile .site-header.site-header-nav > nav.top-nav {
-  width: min(100%, calc(100vw - 14px));
-  padding: 6px 7px;
-  gap: clamp(3px, 1.2vw, 8px);
-}
 
-.device-mobile .site-header.site-header-nav .brand {
-  width: clamp(46px, 14vw, 58px);
-  height: clamp(46px, 14vw, 58px);
-  margin-inline: 2px;
-}
+/* =========================================================
+   3. CONTRATO ÚNICO DE CARD
+   Hero e Perfil seguem a mesma lógica.
+   ========================================================= */
 
-.device-mobile .top-link {
-  min-height: 28px;
-  padding-inline: clamp(2px, 1vw, 5px);
-  font-size: clamp(7.5px, 2.05vw, 9px);
-  letter-spacing: .55px;
-}
-
-html[data-device-model*="iphone-15"] .hero-floating {
-  padding-top: max(112px, calc(env(safe-area-inset-top) + 94px));
-}
-
-html[data-device-model*="iphone-15"] .hero-floating .hero-content {
-  width: min(100%, 348px);
-}
-
-html[data-device-model*="iphone-15"] .perfil-foto-card img,
-html[data-device-model*="iphone-15"] .perfil-card-modelo #pessoa {
-  width: min(100%, 400px) !important;
-}
-
-html[data-device-model*="pro-max"] .hero-floating .hero-content,
-html[data-device-model*="plus"] .hero-floating .hero-content {
-  width: min(100%, 368px);
-}
-
-html[data-device-model*="pro-max"] .perfil-foto-card img,
-html[data-device-model*="plus"] .perfil-foto-card img {
-  width: min(100%, 430px) !important;
-}
-
-html[data-device-model*="samsung-galaxy-s25"] .hero-floating {
-  padding-top: 116px;
-}
-
-html[data-device-model*="samsung-galaxy-s25"] .hero-floating .hero-content {
-  width: min(100%, 354px);
-}
-
-html[data-device-model*="samsung-galaxy-s25"] .project-card {
-  border-radius: 28px;
-}
-
-html[data-device-model*="s25-ultra"] .hero-floating .hero-content {
-  width: min(100%, 378px);
-}
-
-html[data-device-model*="s25-ultra"] .perfil-foto-card img {
-  width: min(100%, 440px) !important;
-}
-
-html[data-viewport-tier="compact"] .top-link {
-  font-size: 7.2px;
-  letter-spacing: .35px;
-}
-
-html[data-viewport-tier="compact"] .site-header.site-header-nav .brand {
-  width: 46px;
-  height: 46px;
-}
-
-html[data-viewport-tier="compact"] .hero-floating .hero-content,
-html[data-viewport-tier="compact"] .perfil-info-card {
-  width: min(100%, 304px);
-  padding-inline: 14px;
-}
-
-html[data-viewport-tier="compact"] .hero-floating h1,
-html[data-viewport-tier="compact"] .perfil-info-card h1 {
-  font-size: clamp(2.55rem, 17vw, 3.75rem);
-}
-
-html[data-viewport-tier="compact"] .citacao h1 {
-  font-size: clamp(2.2rem, 12vw, 3.65rem);
-}
-
-.device-tablet .perfil-card-modelo,
-.device-tablet .contato-luxo {
-  width: min(820px, calc(100% - 44px));
-}
-
-.device-tablet .projects-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.device-tablet .hero-floating .hero-content {
-  width: min(720px, calc(100% - 44px));
-}
-
-.device-mobile.orientation-landscape .hero-floating {
-  min-height: auto;
-  padding-top: 102px;
-  padding-bottom: 56px;
-}
-
-.device-mobile.orientation-landscape .hero-floating h1 {
-  font-size: clamp(2.8rem, 10vw, 4.8rem);
-}
-
-.device-mobile.orientation-landscape .hero-floating .hero-content {
-  width: min(640px, calc(100% - 32px));
-  padding-block: 22px;
-}
-
-.device-mobile.orientation-landscape .float-item {
-  opacity: .18;
-}
-
-.device-mobile .hero-floating p,
-.device-mobile .perfil-fatos p,
-.device-mobile .citacao p,
-.device-mobile .project-info p,
-.device-mobile .number-card p,
-.device-mobile .erro-card-premium p {
-  line-height: 1.62;
-}
-
-.device-mobile .project-info h3,
-.device-mobile .number-card h3 {
+.hero-content,
+.hero-floating .hero-content,
+.hero-index-luxo .hero-content,
+.perfil-info-card {
+  box-sizing: border-box;
+  width: min(100%, 780px);
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: normal;
   text-wrap: balance;
 }
 
+.hero-floating .hero-content,
+.hero-index-luxo .hero-content,
+.perfil-info-card,
+.erro-card-premium {
+  position: relative;
+  z-index: 30;
+}
+
+.hero h1,
 .hero-floating h1,
+.hero-index-luxo h1,
 .perfil-info-card h1,
 .projetos h1,
 .results-header h2,
 .citacao h1,
 .erro-card-premium h1 {
-  overflow-wrap: anywhere;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
   text-wrap: balance;
 }
 
+.hero p,
 .hero-floating p,
+.hero-index-luxo p,
 .perfil-fatos p,
 .citacao p,
 .project-info p,
 .number-card p,
 .erro-card-premium p {
+  max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.btn,
+.hero .btn,
+.hero-floating .btn,
+.hero-index-luxo .btn,
+.perfil-cta,
+.erro-actions .btn,
+.erro-btn-secondary {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+
+/* =========================================================
+   4. IMAGENS DECORATIVAS
+   Não competem com texto/botões.
+   ========================================================= */
+
+.hero-bg-items,
+.perfil-decor,
+.erro-bg-items {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-item,
+.erro-float {
+  pointer-events: none;
+  user-select: none;
 }
 
 .input-touch .float-item {
   pointer-events: none;
 }
 
-.device-mobile .float-item {
-  animation-duration: 8.8s;
+
+/* =========================================================
+   5. DESKTOP BASE / TELAS GRANDES
+   Mantém o style.css como fonte principal.
+   ========================================================= */
+
+.projects-grid {
+  min-width: 0;
 }
 
-@media (max-width: 390px) {
-  .top-link {
-    font-size: 7.5px;
-  }
-
-  .hero-floating .hero-content,
-  .perfil-info-card {
-    width: min(100%, 306px);
-  }
-
-  .btn,
-  .perfil-cta {
-    width: min(100%, 260px);
-    font-size: 11px;
-  }
+.project-card,
+.number-card,
+.footer-content,
+.contato-luxo,
+.perfil-card-modelo {
+  min-width: 0;
 }
 
-@media (min-width: 391px) and (max-width: 430px) {
-  .hero-floating .hero-content,
-  .perfil-info-card {
-    width: min(100%, 344px);
-  }
-}
 
-@media (min-width: 431px) and (max-width: 767px) {
-  .hero-floating .hero-content,
-  .perfil-info-card {
-    width: min(100%, 380px);
+/* =========================================================
+   6. BREAKPOINT — 1180px
+   Desktop menor / notebook.
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  :root {
+    --container: min(960px, calc(100% - 36px));
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perfil-card-modelo {
+    width: min(960px, calc(100% - 36px));
+    gap: clamp(24px, 4vw, 56px);
   }
 
   .perfil-foto-card img,
   .perfil-card-modelo #pessoa {
-    width: min(100%, 430px) !important;
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --container: min(1280px, calc(100% - 80px));
+    width: min(42vw, 520px) !important;
   }
 
-  .hero-floating .hero-content {
-    width: min(860px, 100%);
-  }
-
-  .projects-grid {
-    gap: 34px;
-  }
-}
-/* =========================================================
-   FIX DEFINITIVO HERO-CONTENT — NÃO QUEBRAR EM CELULAR/TABLET
-   Este bloco fica NO FINAL do responsive.css para sobrescrever os anteriores.
-   ========================================================= */
-
-/* Caixa central segura: serve para hero antigo e hero novo */
-.hero-content,
-.hero-floating .hero-content,
-.hero-index-luxo .hero-content {
-  box-sizing: border-box !important;
-  width: min(calc(100% - 28px), 760px) !important;
-  max-width: 760px !important;
-  min-width: 0 !important;
-  margin-inline: auto !important;
-  padding: clamp(26px, 5vw, 54px) clamp(18px, 5vw, 56px) !important;
-  overflow: hidden !important;
-  overflow-wrap: break-word !important;
-  word-break: normal !important;
-  text-wrap: balance;
-}
-
-/* Título seguro */
-.hero h1,
-.hero-floating h1,
-.hero-index-luxo h1 {
-  max-width: 100% !important;
-  font-size: clamp(3rem, 11vw, 8rem) !important;
-  line-height: .9 !important;
-  letter-spacing: clamp(1px, .7vw, 10px) !important;
-  overflow-wrap: normal !important;
-  word-break: keep-all !important;
-  text-wrap: balance;
-}
-
-/* Texto seguro */
-.hero p,
-.hero-floating p,
-.hero-index-luxo p {
-  max-width: min(100%, 620px) !important;
-  margin-inline: auto !important;
-  font-size: clamp(.95rem, 1.4vw, 1.2rem) !important;
-  line-height: 1.6 !important;
-  letter-spacing: 0 !important;
-  text-wrap: balance;
-  overflow-wrap: break-word;
-}
-
-/* Botão nunca estoura a caixa */
-.hero .btn,
-.hero-floating .btn,
-.hero-index-luxo .btn {
-  width: fit-content !important;
-  max-width: 100% !important;
-  white-space: normal !important;
-  text-align: center !important;
-}
-
-/* Imagens do hero ficam decorativas e não competem com o texto */
-.hero-floating .float-item,
-.hero-index-luxo .float-item {
-  z-index: 1 !important;
-}
-
-.hero-floating .hero-content,
-.hero-index-luxo .hero-content {
-  z-index: 30 !important;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
   .hero-content,
   .hero-floating .hero-content,
-  .hero-index-luxo .hero-content {
-    width: min(calc(100% - 36px), 680px) !important;
-    max-width: 680px !important;
-  }
-
-  .hero h1,
-  .hero-floating h1,
-  .hero-index-luxo h1 {
-    font-size: clamp(3rem, 12vw, 7rem) !important;
+  .hero-index-luxo .hero-content,
+  .perfil-info-card {
+    width: min(100%, 720px);
   }
 }
 
-/* Celular */
-@media (max-width: 650px) {
+
+/* =========================================================
+   7. BREAKPOINT — 900px
+   Tablet / mobile grande.
+   A partir daqui, perfil vira coluna.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --container: min(760px, calc(100% - 32px));
+  }
+
+  section {
+    padding-block: 86px;
+  }
+
+  .site-header.site-header-nav {
+    padding-inline: 10px;
+  }
+
+  .site-header.site-header-nav > nav.top-nav {
+    width: min(100%, 620px);
+    gap: clamp(7px, 2vw, 18px);
+    padding: 7px 10px;
+  }
+
+  .site-header.site-header-nav .brand {
+    width: 62px;
+    height: 62px;
+  }
+
+  .top-link {
+    min-height: 32px;
+    padding-inline: 4px;
+    font-size: 9px;
+    letter-spacing: .9px;
+  }
+
+  .top-link:hover,
+  .site-header .brand:hover,
+  .btn:hover,
+  .contact-link:hover,
+  .erro-btn-secondary:hover {
+    transform: none;
+    letter-spacing: inherit;
+  }
+
   .hero,
   .hero-floating,
   .hero-index-luxo {
-    min-height: 100svh !important;
-    padding-top: max(112px, calc(env(safe-area-inset-top) + 94px)) !important;
-    padding-inline: 14px !important;
-    padding-bottom: 82px !important;
+    min-height: 100svh;
+    padding: 124px 18px 78px;
   }
 
   .hero-content,
   .hero-floating .hero-content,
-  .hero-index-luxo .hero-content {
-    width: min(calc(100% - 24px), 360px) !important;
-    max-width: 360px !important;
-    padding: 26px 16px !important;
-    border-radius: 28px !important;
+  .hero-index-luxo .hero-content,
+  .perfil-info-card {
+    width: min(680px, calc(100% - 36px));
   }
 
   .hero h1,
   .hero-floating h1,
   .hero-index-luxo h1 {
-    font-size: clamp(2.85rem, 16vw, 4.7rem) !important;
-    letter-spacing: clamp(.5px, .6vw, 2px) !important;
+    font-size: clamp(3rem, 12vw, 7rem);
+  }
+
+  .float-item {
+    opacity: .46;
+  }
+
+  .perfil-card-modelo {
+    width: min(760px, calc(100% - 36px));
+    min-height: auto;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 124px;
+    gap: 22px;
+  }
+
+  .perfil-info-card {
+    text-align: center;
+  }
+
+  .perfil-actions {
+    justify-content: center;
+  }
+
+  .perfil-foto-card {
+    justify-content: center;
+  }
+
+  .perfil-foto-card img,
+  .perfil-card-modelo #pessoa {
+    width: min(82vw, 520px) !important;
+    max-width: 100% !important;
+  }
+
+  .contato-luxo {
+    width: var(--container);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 124px;
+    gap: 38px;
+  }
+
+  .citacao {
+    margin-inline: auto;
+  }
+
+  .citacao p {
+    margin-inline: auto;
+  }
+
+  .links-luxo,
+  .contact-links-luxo {
+    align-items: center;
+    margin-inline: auto;
+  }
+
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .number-card {
+    min-height: 220px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .number-card.destaque {
+    transform: none;
+  }
+
+  .gallery-arrow {
+    display: none;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand img,
+  footer img,
+  .logo-contato {
+    margin-inline: auto;
+  }
+
+  .footer-contact {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+/* =========================================================
+   8. BREAKPOINT — 650px
+   Celular.
+   ========================================================= */
+
+@media (max-width: 650px) {
+  :root {
+    --container: min(520px, calc(100% - 28px));
+    --header-height: 74px;
+  }
+
+  section {
+    padding-block: 74px;
+  }
+
+  .site-header.site-header-nav {
+    top: max(8px, env(safe-area-inset-top));
+    padding-inline: 7px;
+  }
+
+  .site-header.site-header-nav > nav.top-nav {
+    width: min(100%, calc(100vw - 14px));
+    gap: clamp(3px, 1.2vw, 8px);
+    padding: 6px 7px;
+  }
+
+  .site-header.site-header-nav .brand {
+    width: clamp(48px, 14vw, 58px);
+    height: clamp(48px, 14vw, 58px);
+    margin-inline: 2px;
+  }
+
+  .top-link {
+    min-height: 28px;
+    padding-inline: clamp(2px, 1vw, 5px);
+    font-size: clamp(7.5px, 2.05vw, 9px);
+    letter-spacing: .55px;
+  }
+
+  .hero,
+  .hero-floating,
+  .hero-index-luxo {
+    min-height: 100svh;
+    padding: max(112px, calc(env(safe-area-inset-top) + 92px)) 14px 84px;
+  }
+
+  .hero-content,
+  .hero-floating .hero-content,
+  .hero-index-luxo .hero-content,
+  .perfil-info-card {
+    width: min(100%, 360px);
+    padding: 26px 16px;
+    border-radius: 28px;
+  }
+
+  .hero h1,
+  .hero-floating h1,
+  .hero-index-luxo h1 {
+    font-size: clamp(2.85rem, 16vw, 4.7rem);
+    letter-spacing: clamp(.5px, .6vw, 2px);
+    line-height: .9;
   }
 
   .hero p,
   .hero-floating p,
   .hero-index-luxo p {
-    max-width: 292px !important;
-    font-size: .95rem !important;
-    line-height: 1.58 !important;
-    margin-bottom: 28px !important;
+    max-width: 292px;
+    margin-inline: auto;
+    margin-bottom: 28px;
+    font-size: .95rem;
+    line-height: 1.58;
   }
 
   .hero .btn,
   .hero-floating .btn,
-  .hero-index-luxo .btn {
-    width: min(100%, 276px) !important;
-    min-height: 50px !important;
-    padding-inline: 18px !important;
-    font-size: 11px !important;
-    letter-spacing: 1.4px !important;
+  .hero-index-luxo .btn,
+  .perfil-cta {
+    width: min(100%, 276px);
+    min-height: 50px;
+    padding-inline: 18px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
   }
 
-  .hero-floating .float-item,
-  .hero-index-luxo .float-item {
-    opacity: .24 !important;
+  .float-item {
+    opacity: .25;
+    filter: drop-shadow(0 18px 28px rgba(0,0,0,.26));
+    animation-duration: 8.8s;
+  }
+
+  .item-instagram {
+    width: 44vw;
+    opacity: .22;
+  }
+
+  .item-case {
+    width: 48vw;
+    opacity: .25;
+  }
+
+  .item-luz {
+    width: 36vw;
+    opacity: .24;
+  }
+
+  .item-conectar,
+  .item-gravador {
+    width: 40vw;
+  }
+
+  .hero-bg-items .float-item:nth-child(1) { --x: -2%; --y: 68%; }
+  .hero-bg-items .float-item:nth-child(2) { --x: 96%; --y: 22%; }
+  .hero-bg-items .float-item:nth-child(3) { --x: 78%; --y: 91%; }
+  .hero-bg-items .float-item:nth-child(4) { --x: 8%; --y: 20%; }
+  .hero-bg-items .float-item:nth-child(5) { --x: 104%; --y: 64%; }
+
+  .perfil-card-modelo {
+    width: min(100% - 28px, 520px);
+    padding-top: 112px;
+    gap: 18px;
+  }
+
+  .perfil-foto-card img,
+  .perfil-card-modelo #pessoa {
+    width: min(100%, 390px) !important;
+    max-width: 100% !important;
+  }
+
+  .perfil-info-card h1 {
+    font-size: clamp(2.75rem, 15vw, 4.7rem);
+    letter-spacing: 2px;
+  }
+
+  .perfil-info-card h1 strong {
+    font-size: .44em;
+    letter-spacing: .12em;
+  }
+
+  .perfil-fatos {
+    gap: 14px;
+  }
+
+  .perfil-fatos p {
+    font-size: .96rem;
+    line-height: 1.58;
+  }
+
+  .contato-luxo {
+    width: var(--container);
+    padding-top: 112px;
+    gap: 34px;
+  }
+
+  .citacao h1 {
+    font-size: clamp(2.45rem, 12vw, 4.8rem);
+  }
+
+  .citacao p {
+    font-size: .96rem;
+    line-height: 1.62;
+  }
+
+  .contact-link {
+    width: min(100%, 290px);
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  .projetos h1,
+  .results-header h2 {
+    font-size: clamp(2.75rem, 13vw, 4.7rem);
+    letter-spacing: -1px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: auto;
+    border-radius: 26px;
+  }
+
+  .project-card > img,
+  .project-gallery,
+  .logo-gallery,
+  .gallery-slide,
+  .logo-slide,
+  .project-gallery img,
+  .logo-gallery img {
+    height: auto;
+    min-height: auto;
+  }
+
+  .project-card > img,
+  .project-gallery img,
+  .logo-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .project-card.logotipo img,
+  .logo-gallery img {
+    object-fit: contain;
+    padding: 28px;
+  }
+
+  .project-info {
+    position: relative;
+    background: var(--cor-card);
+    color: var(--cor-texto);
+    padding: 22px;
+  }
+
+  .project-info h3 {
+    color: var(--cor-texto);
+  }
+
+  .project-info p {
+    color: var(--cor-muted);
+    line-height: 1.62;
+  }
+
+  .gallery-hint {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+  }
+
+  .linha-evolucao {
+    height: 260px;
+  }
+
+  .erro-hero {
+    padding: 86px 14px 64px;
+  }
+
+  .erro-card-premium {
+    width: min(100%, 520px);
+    padding: 34px 18px;
+    border-radius: 34px;
+  }
+
+  .erro-kicker::before,
+  .erro-kicker::after {
+    width: 22px;
+  }
+
+  .erro-number {
+    font-size: clamp(5.6rem, 27vw, 8.2rem);
+  }
+
+  .erro-logo-orbit {
+    width: clamp(68px, 20vw, 94px);
+  }
+
+  .erro-card-premium h1 {
+    font-size: clamp(2rem, 10vw, 3.3rem);
+  }
+
+  .erro-card-premium p {
+    line-height: 1.62;
+  }
+
+  .erro-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+
+  .erro-actions .btn,
+  .erro-btn-secondary {
+    width: 100%;
+  }
+
+  .erro-phone {
+    width: 62vw;
+    left: -24%;
+    bottom: 10%;
+    opacity: .22;
+  }
+
+  .erro-luz {
+    width: 40vw;
+    right: -5%;
+    top: 18%;
+    opacity: .32;
+  }
+
+  .erro-case {
+    width: 66vw;
+    right: -26%;
+    bottom: 2%;
+    opacity: .22;
+  }
+
+  .erro-mic {
+    width: 42vw;
+    left: -5%;
+    top: 16%;
+    opacity: .24;
   }
 }
 
-/* Celulares muito pequenos */
-@media (max-width: 380px) {
+
+/* =========================================================
+   9. BREAKPOINT — 430px
+   Celulares pequenos.
+   ========================================================= */
+
+@media (max-width: 430px) {
+  :root {
+    --container: calc(100% - 24px);
+  }
+
+  .site-header.site-header-nav > nav.top-nav {
+    gap: 4px;
+  }
+
+  .site-header.site-header-nav .brand {
+    width: 50px;
+    height: 50px;
+  }
+
+  .top-link {
+    font-size: 7.6px;
+    letter-spacing: .45px;
+  }
+
   .hero-content,
   .hero-floating .hero-content,
-  .hero-index-luxo .hero-content {
-    width: min(calc(100% - 20px), 318px) !important;
-    max-width: 318px !important;
-    padding: 24px 14px !important;
+  .hero-index-luxo .hero-content,
+  .perfil-info-card {
+    width: min(100%, 315px);
+    padding: 24px 14px;
   }
 
   .hero h1,
   .hero-floating h1,
-  .hero-index-luxo h1 {
-    font-size: clamp(2.55rem, 15vw, 3.8rem) !important;
+  .hero-index-luxo h1,
+  .perfil-info-card h1 {
+    font-size: clamp(2.55rem, 17vw, 4.2rem);
   }
 
   .hero p,
   .hero-floating p,
   .hero-index-luxo p {
-    max-width: 260px !important;
-    font-size: .9rem !important;
+    max-width: 260px;
+    font-size: .9rem;
+  }
+
+  .btn,
+  .hero .btn,
+  .hero-floating .btn,
+  .hero-index-luxo .btn,
+  .perfil-cta {
+    width: min(100%, 260px);
+    font-size: 11px;
+  }
+
+  .float-item {
+    opacity: .20;
+  }
+
+  .perfil-foto-card img,
+  .perfil-card-modelo #pessoa {
+    width: min(100%, 360px) !important;
+  }
+
+  .perfil-fatos p {
+    font-size: .92rem;
+  }
+
+  .citacao h1 {
+    font-size: clamp(2.2rem, 12vw, 3.75rem);
+  }
+
+  .project-info,
+  .number-card {
+    padding: 20px;
+  }
+
+  .footer-bottom {
+    font-size: .82rem;
+  }
+
+  .erro-card-premium {
+    padding-inline: 16px;
+  }
+
+  .erro-tags span {
+    font-size: 10px;
   }
 }
 
-/* Celular deitado */
-@media (max-width: 900px) and (orientation: landscape) {
-  .hero,
-  .hero-floating,
-  .hero-index-luxo {
-    min-height: auto !important;
-    padding-top: 100px !important;
-    padding-bottom: 52px !important;
+
+/* =========================================================
+   10. ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .float-item,
+  .erro-float,
+  .orbit-ring,
+  .gallery-hint::after {
+    animation: none !important;
   }
-
-  .hero-content,
-  .hero-floating .hero-content,
-  .hero-index-luxo .hero-content {
-    width: min(calc(100% - 32px), 620px) !important;
-    max-width: 620px !important;
-    padding-block: 22px !important;
-  }
-
-  .hero h1,
-  .hero-floating h1,
-  .hero-index-luxo h1 {
-    font-size: clamp(2.8rem, 10vw, 4.8rem) !important;
-  }
-
-  .hero p,
-  .hero-floating p,
-  .hero-index-luxo p {
-    max-width: 520px !important;
-  }
-}
-
-/* Ajustes específicos por detecção de dispositivo */
-html[data-device-model*="iphone-15"] .hero-content,
-html[data-device-model*="iphone-15"] .hero-floating .hero-content,
-html[data-device-model*="iphone-15"] .hero-index-luxo .hero-content,
-html[data-device-model*="samsung-galaxy-s25"] .hero-content,
-html[data-device-model*="samsung-galaxy-s25"] .hero-floating .hero-content,
-html[data-device-model*="samsung-galaxy-s25"] .hero-index-luxo .hero-content {
-  width: min(calc(100% - 24px), 360px) !important;
-  max-width: 360px !important;
-}
-
-html[data-device-model*="pro-max"] .hero-content,
-html[data-device-model*="pro-max"] .hero-floating .hero-content,
-html[data-device-model*="pro-max"] .hero-index-luxo .hero-content,
-html[data-device-model*="plus"] .hero-content,
-html[data-device-model*="plus"] .hero-floating .hero-content,
-html[data-device-model*="plus"] .hero-index-luxo .hero-content,
-html[data-device-model*="s25-ultra"] .hero-content,
-html[data-device-model*="s25-ultra"] .hero-floating .hero-content,
-html[data-device-model*="s25-ultra"] .hero-index-luxo .hero-content {
-  width: min(calc(100% - 24px), 380px) !important;
-  max-width: 380px !important;
-}
-
-html[data-viewport-tier="compact"] .hero-content,
-html[data-viewport-tier="compact"] .hero-floating .hero-content,
-html[data-viewport-tier="compact"] .hero-index-luxo .hero-content {
-  width: min(calc(100% - 20px), 304px) !important;
-  max-width: 304px !important;
-  padding-inline: 14px !important;
 }

@@ -1,6 +1,0 @@
-Substitua o arquivo css/responsive.css pelo responsive.css deste pacote.
-
-Depois rode:
-git add css/responsive.css
-git commit -m "corrige hero responsivo"
-git push
