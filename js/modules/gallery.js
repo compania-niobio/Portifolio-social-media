@@ -1,102 +1,132 @@
+const AUTOPLAY_DELAY = 5200;
+const RESUME_DELAY = 1400;
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getSlideWidth(gallery) {
+  return gallery.querySelector("figure")?.offsetWidth || gallery.clientWidth || 1;
+}
+
+function goToNext(gallery) {
+  const slideWidth = getSlideWidth(gallery);
+  const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+  const isLast = gallery.scrollLeft >= maxScroll - 10;
+
+  gallery.scrollTo({
+    left: isLast ? 0 : gallery.scrollLeft + slideWidth,
+    behavior: "smooth",
+  });
+}
+
+function goToPrev(gallery) {
+  const slideWidth = getSlideWidth(gallery);
+  const isFirst = gallery.scrollLeft <= 10;
+
+  gallery.scrollTo({
+    left: isFirst ? gallery.scrollWidth : gallery.scrollLeft - slideWidth,
+    behavior: "smooth",
+  });
+}
+
 export function initGalleries() {
+  if (prefersReducedMotion()) return;
+
   document.querySelectorAll(".project-gallery, .logo-gallery").forEach((gallery) => {
-    let isDown = false;
+    const slides = Array.from(gallery.querySelectorAll("figure"));
+    if (slides.length <= 1) return;
+
+    const card = gallery.closest(".gallery-card");
+    const prev = card?.querySelector(".gallery-prev");
+    const next = card?.querySelector(".gallery-next");
+
+    let isDragging = false;
     let startX = 0;
     let scrollLeft = 0;
     let autoplayTimer = null;
-    let autoplayPaused = false;
-
-    const slides = Array.from(gallery.querySelectorAll("figure"));
-    const card = gallery.closest(".gallery-card");
-
-    const getSlideWidth = () => gallery.querySelector("figure")?.offsetWidth || gallery.clientWidth;
-
-    const goNext = () => {
-      const slideWidth = getSlideWidth();
-      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-      const isLast = gallery.scrollLeft >= maxScroll - 10;
-
-      gallery.scrollTo({
-        left: isLast ? 0 : gallery.scrollLeft + slideWidth,
-        behavior: "smooth",
-      });
-    };
-
-    const goPrev = () => {
-      const slideWidth = getSlideWidth();
-      const isFirst = gallery.scrollLeft <= 10;
-
-      gallery.scrollTo({
-        left: isFirst ? gallery.scrollWidth : gallery.scrollLeft - slideWidth,
-        behavior: "smooth",
-      });
-    };
+    let resumeTimer = null;
+    let paused = false;
 
     const pauseAutoplay = () => {
-      autoplayPaused = true;
+      paused = true;
+      window.clearTimeout(resumeTimer);
     };
 
     const resumeAutoplay = () => {
-      window.setTimeout(() => {
-        autoplayPaused = false;
-      }, 1200);
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        paused = false;
+      }, RESUME_DELAY);
     };
 
     const startAutoplay = () => {
-      if (slides.length <= 1 || autoplayTimer) return;
+      if (autoplayTimer) return;
 
       autoplayTimer = window.setInterval(() => {
-        if (!autoplayPaused && !document.hidden) goNext();
-      }, 4200);
+        if (paused || document.hidden) return;
+        goToNext(gallery);
+      }, AUTOPLAY_DELAY);
+    };
+
+    const stopAutoplay = () => {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
     };
 
     gallery.addEventListener("mousedown", (event) => {
-      isDown = true;
+      isDragging = true;
       pauseAutoplay();
       gallery.classList.add("is-dragging");
       startX = event.pageX - gallery.offsetLeft;
       scrollLeft = gallery.scrollLeft;
     });
 
-    gallery.addEventListener("mouseleave", () => {
-      isDown = false;
-      gallery.classList.remove("is-dragging");
-      resumeAutoplay();
-    });
-
-    gallery.addEventListener("mouseup", () => {
-      isDown = false;
-      gallery.classList.remove("is-dragging");
-      resumeAutoplay();
-    });
-
     gallery.addEventListener("mousemove", (event) => {
-      if (!isDown) return;
+      if (!isDragging) return;
       event.preventDefault();
+
       const x = event.pageX - gallery.offsetLeft;
-      const walk = (x - startX) * 1.4;
+      const walk = (x - startX) * 1.35;
       gallery.scrollLeft = scrollLeft - walk;
     });
 
+    const finishDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      gallery.classList.remove("is-dragging");
+      resumeAutoplay();
+    };
+
+    gallery.addEventListener("mouseup", finishDrag);
+    gallery.addEventListener("mouseleave", finishDrag);
+
     gallery.addEventListener("touchstart", pauseAutoplay, { passive: true });
     gallery.addEventListener("touchend", resumeAutoplay, { passive: true });
+    gallery.addEventListener("focusin", pauseAutoplay);
+    gallery.addEventListener("focusout", resumeAutoplay);
 
     card?.addEventListener("mouseenter", pauseAutoplay);
     card?.addEventListener("mouseleave", resumeAutoplay);
 
-    const prev = card?.querySelector(".gallery-prev");
-    const next = card?.querySelector(".gallery-next");
-
     prev?.addEventListener("click", () => {
       pauseAutoplay();
-      goPrev();
+      goToPrev(gallery);
       resumeAutoplay();
     });
 
     next?.addEventListener("click", () => {
       pauseAutoplay();
-      goNext();
+      goToNext(gallery);
       resumeAutoplay();
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
     });
 
     startAutoplay();
