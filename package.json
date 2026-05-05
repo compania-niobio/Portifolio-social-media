@@ -1,0 +1,16 @@
+{
+  "name": "portifolio-social-media",
+  "version": "1.0.0",
+  "description": "Portfólio profissional de Isadora Rezende: social media, videomaker e storymaker",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "dev": "npx serve ."
+  },
+  "keywords": ["portfolio", "social-media"],
+  "author": "Isadora Rezende",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
