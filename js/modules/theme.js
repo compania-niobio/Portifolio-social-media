@@ -8,12 +8,12 @@ const paths = {
     srcset: "assets/imagens/logo_white_300x300.png 300w, assets/imagens/logo_white_600x600.png 600w, assets/imagens/logo_white_1200x1200.png 1200w",
   },
   dayPerson: {
-    src: "assets/imagens/isadora_black_1200.png",
-    srcset: "assets/imagens/isadora_black_300.png 300w, assets/imagens/isadora_black_600.png 600w, assets/imagens/isadora_black_1200.png 1200w",
+    src: "assets/imagens/isadora/isadora_nova_1200x1200.png",
+    srcset: "assets/imagens/isadora/isadora_nova_300x300.png 300w, assets/imagens/isadora/isadora_nova_600x600.png 600w, assets/imagens/isadora/isadora_nova_1200x1200.png 1200w",
   },
   nightPerson: {
-    src: "assets/imagens/isadora_1200.png",
-    srcset: "assets/imagens/isadora_300.png 300w, assets/imagens/isadora_600.png 600w, assets/imagens/isadora_1200.png 1200w",
+    src: "assets/imagens/isadora/isadora_nova_1200x1200.png",
+    srcset: "assets/imagens/isadora/isadora_nova_300x300.png 300w, assets/imagens/isadora/isadora_nova_600x600.png 600w, assets/imagens/isadora/isadora_nova_1200x1200.png 1200w",
   },
 };
 

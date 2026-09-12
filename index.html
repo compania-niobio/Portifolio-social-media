@@ -100,13 +100,13 @@
           <picture>
             <source
               id="heroImageSource"
-              srcset="assets/imagens/isadora/isadora_black_300.png 300w, assets/imagens/isadora/isadora_black_600.png 600w, assets/imagens/isadora/isadora_black_1200.png 1200w"
+              srcset="assets/imagens/isadora/isadora_nova_300x300.png 300w, assets/imagens/isadora/isadora_nova_600x600.png 600w, assets/imagens/isadora/isadora_nova_1200x1200.png 1200w"
               sizes="(max-width: 650px) 92vw, (max-width: 900px) 58vw, 45vw"
             />
             <img
               id="heroImage"
-              src="assets/imagens/isadora/isadora_black_1200.png"
-              srcset="assets/imagens/isadora/isadora_black_300.png 300w, assets/imagens/isadora/isadora_black_600.png 600w, assets/imagens/isadora/isadora_black_1200.png 1200w"
+              src="assets/imagens/isadora/isadora_nova_1200x1200.png"
+              srcset="assets/imagens/isadora/isadora_nova_300x300.png 300w, assets/imagens/isadora/isadora_nova_600x600.png 600w, assets/imagens/isadora/isadora_nova_1200x1200.png 1200w"
               sizes="(max-width: 650px) 92vw, (max-width: 900px) 58vw, 45vw"
               alt="Isadora Rezende"
               width="1200"
@@ -137,14 +137,6 @@
             <span>Experiência criando conteúdo</span>
             <small>Estratégia • Estética • Direção</small>
           </div>
-
-          <div class="skills" aria-label="Habilidades">
-            <div class="skill" style="--value:92%"><span>Social Media</span><i></i></div>
-            <div class="skill" style="--value:88%"><span>Vídeo</span><i></i></div>
-            <div class="skill" style="--value:94%"><span>Stories</span><i></i></div>
-            <div class="skill" style="--value:90%"><span>Direção criativa</span><i></i></div>
-          </div>
-
           <div class="actions compact">
             <a class="btn btn-primary" href="#projetos">Ver projetos</a>
             <a class="btn btn-ghost" href="#contato">Falar comigo</a>
@@ -193,9 +185,9 @@
               </div>
               <div class="making-stage">
                 <div class="making-glow" aria-hidden="true"></div>
-                <div class="making-video-shell" data-video-player>
+                <div class="making-video-shell" data-video-player data-making-carousel>
                   <div class="making-video-frame">
-                    <video class="making-video" autoplay muted loop playsinline preload="metadata" poster="assets/videos/making-of/isadora-making-of-poster.jpg">
+                    <video class="making-video" autoplay muted loop playsinline preload="metadata" poster="assets/videos/making-of/isadora-making-of-poster.jpg" data-video-index="0">
                       <source src="assets/videos/making-of/isadora-making-of.mp4" type="video/mp4" />
                       Seu navegador não suporta vídeo em HTML5.
                     </video>
@@ -203,9 +195,11 @@
                       <span class="video-center-icon">Ⅱ</span>
                     </button>
                     <div class="video-top-label">
-                      <span>Making Of</span>
+                      <span class="making-video-label">Making Of • 01/02</span>
                       <strong>Isadora Rezende</strong>
                     </div>
+                    <button class="making-video-nav making-video-prev" type="button" aria-label="Vídeo anterior" title="Vídeo anterior">‹</button>
+                    <button class="making-video-nav making-video-next" type="button" aria-label="Próximo vídeo" title="Próximo vídeo">›</button>
                     <div class="video-controls" aria-label="Controles do vídeo">
                       <button class="video-control video-toggle" type="button" aria-label="Pausar vídeo">Ⅱ</button>
                       <div class="video-progress-wrap">
@@ -343,12 +337,14 @@
           <p>Conteúdo com estética, direção e estratégia para marcas que querem se destacar.</p>
           <ul class="contact-list">
             <li>Marília - SP</li>
-            <li><a href="https://instagram.com/socialmedia_isadora" target="_blank" rel="noopener">@socialmedia_isadora</a></li>
+            <li><a href="https://instagram.com/isadora_rezendemkt
+" target="_blank" rel="noopener">@isadora_rezendemkt</a></li>
             <li><a href="https://wa.me/5514996032749" target="_blank" rel="noopener">+55 14 99603-2749</a></li>
             <li><a href="mailto:Isadora.rezende28@gmail.com">Isadora.rezende28@gmail.com</a></li>
           </ul>
           <div class="contact-buttons">
-            <a href="https://instagram.com/socialmedia_isadora" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="" />Instagram</a>
+            <a href="https://instagram.com/isadora_rezendemkt
+" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="" />Instagram</a>
             <a href="https://wa.me/5514996032749" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.svg" alt="" />WhatsApp</a>
             <a href="mailto:Isadora.rezende28@gmail.com" target="_blank"><img src="assets/icons/gmail.svg" alt="" />Gmail</a>
           </div>
@@ -373,10 +369,50 @@
         </picture>
       </a>
       <p>Social Media • Videomaker • Storymaker</p>
-      <p>Marília - SP • @socialmedia_isadora</p>
+      <p>Marília - SP • @isadora_rezendemkt</p>
       <small>© 2026 Isadora Rezende. Todos os direitos reservados.</small>
     </div>
   </footer>
+
+
+  <style>
+    .making-video-nav{position:absolute;z-index:12;top:50%;transform:translateY(-50%);width:44px;height:64px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(0,0,0,.28);color:#fff;font-size:38px;line-height:1;cursor:pointer;opacity:.18;backdrop-filter:blur(10px);transition:opacity .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+    .making-video-prev{left:12px}.making-video-next{right:12px}
+    .making-video-frame:hover .making-video-nav,.making-video-nav:focus-visible{opacity:.9}
+    .making-video-nav:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-50%) scale(1.04)}
+    .making-video-frame.is-paused .making-video-nav{opacity:.72}
+    .making-video-nav:disabled{opacity:.18;cursor:default;pointer-events:none}
+    .making-video.is-switching{opacity:.35;transition:opacity .12s ease}
+    @media (max-width:650px){.making-video-nav{width:38px;height:54px;font-size:31px;opacity:.58}.making-video-prev{left:8px}.making-video-next{right:8px}}
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      const player=document.querySelector('[data-making-carousel]'); if(!player)return;
+      const video=player.querySelector('.making-video'),next=player.querySelector('.making-video-next'),prev=player.querySelector('.making-video-prev'),label=player.querySelector('.making-video-label');
+      const videos=[
+        {src:'assets/videos/making-of/isadora-making-of.mp4',poster:'assets/videos/making-of/isadora-making-of-poster.jpg',label:'Making Of • 01/02'},
+        {src:'assets/videos/making-of/IMG_6423.MP4',poster:'',label:'Making Of • 02/02'}
+      ];
+      let current=0;
+      function updateButtons(){prev.disabled=current===0;next.disabled=current===videos.length-1;}
+      function changeVideo(index){
+        if(index===current)return;
+        const wasPlaying=!video.paused; current=index; video.pause(); video.classList.add('is-switching');
+        window.setTimeout(function(){
+          video.src=videos[current].src;
+          if(videos[current].poster) video.poster=videos[current].poster; else video.removeAttribute('poster');
+          video.dataset.videoIndex=String(current); if(label)label.textContent=videos[current].label; video.load();
+          if(wasPlaying){const promise=video.play(); if(promise&&promise.catch)promise.catch(function(){});}
+          window.setTimeout(function(){video.classList.remove('is-switching')},80);
+        },120);
+        updateButtons();
+      }
+      next.addEventListener('click',function(){changeVideo(current+1);});
+      prev.addEventListener('click',function(){changeVideo(current-1);});
+      updateButtons();
+    });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <script src="js/main.js" defer></script>
