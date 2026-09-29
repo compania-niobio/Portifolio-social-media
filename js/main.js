@@ -21,8 +21,8 @@
       logoSrcset: 'assets/logos/logo_300x300.png 300w, assets/logos/logo_600x600.png 600w, assets/logos/logo_1200x1200.png 1200w'
     },
     noite: {
-      src: 'assets/imagens/isadora/isadora_black_1200x1200.png',
-      srcset: 'assets/imagens/isadora/isadora_black_300x300.png 300w, assets/imagens/isadora/isadora_black_600x600.png 600w, assets/imagens/isadora/isadora_black_1200x1200.png 1200w',
+        src: 'assets/imagens/isadora/isadora_nova_1200x1200.png',
+      srcset: 'assets/imagens/isadora/isadora_nova_300x300.png 300w, assets/imagens/isadora/isadora_nova_600x600.png 600w, assets/imagens/isadora/isadora_nova_1200x1200.png 1200w',
       logo: 'assets/logos/logo_white_600x600.png',
       logoSrcset: 'assets/logos/logo_white_300x300.png 300w, assets/logos/logo_white_600x600.png 600w, assets/logos/logo_white_1200x1200.png 1200w'
     }
